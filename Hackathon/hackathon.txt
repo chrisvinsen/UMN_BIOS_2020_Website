@@ -1,0 +1,76 @@
+Events
+------
+BIOS Hackathon
+"Improving The Society"
+Date		: 29 - 30 Agustus 2019
+Duration	: 24 Hours
+Place		: Function Hall, Universitas Multimedia Nusantara
+
+Benefits
+--------
+MENTORING from experts
+FREE access to MakeAI courses from Renom Infrastruktur Indonesia
+MAKING new connections with other participants, mentors, and judges
+BUILD experiences for portofolio
+...and MANY MORE!
+
+Prize Pool
+----------
+Rp XX.000.000,00
+Rp X.000.000,00
+Rp X.000.000,00
+
+
+Timeline
+--------
+Pendaftaran Tim Peserta 
+17 Juni 2019 - 15 Agustus 2019
+
+Batas Pengumpulan Proposal dan Pembayaran Biaya Pendaftaran 
+15 Agustus 2019
+
+Pengumuman Hasil Seleksi
+22 Agustus 2019
+
+Mentoring Framework Renom
+28 Agustus 2019
+
+Final Hackathon
+29 - 30 Agustus 2019
+
+General Guidelines
+------------------
+1. Peserta merupakan mahasiswa aktif perguruan tinggi se-Indonesia.
+2. Setiap tim terdiri dari 3-4 orang.
+3. Biaya pendaftaran setiap tim adalah Rp 150.001,00 (Seratus Lima Puluh Satu Ribu Rupiah).
+4. Batas terakhir pendaftaran 15 Agustus 2019.
+5. Peserta diwajibkan untuk mengumpulkan proposal ide aplikasi untuk diseleksi.
+6. Tim yang lolos tahap seleksi, diwajibkan untuk mempelajari dan menggunakan framework AI ReNom pada prototipe yang dibuat. (www.renom.jp)
+7. Pembayaran biaya registrasi dapat ditransfer ke rek. BCA 8831180790 a/n Joy Amadea, serta mengupload foto bukti transfer yang terdapat pada halaman profil grup.
+
+
+FAQ
+---
+1. Apa itu Hackathon?
+2. Apakah peserta diwajibkan untuk menginap saat Hackathon berlangsung?
+3. Apakah panitia menyediakan transportasi bagi peserta?
+4. Perlengkapan apa saja yang perlu dibawa peserta saat Hackathon berlangsung?
+5. Apa saja kriteria penilaian lomba?
+6. Apakah peserta yang lolos seleksi diwajibkan menggunakan framework AI ReNom saat final nanti?
+7. Berapakah jumlah tim yang lolos tahap seleksi?
+8. Apakah hasil karya aplikasi yang sudah menang sebelumnya boleh dipertandingkan lagi dalam lomba ini?
+9. Jika memenangkan perlombaan, apakah hak cipta prototipe aplikasi tetap menjadi hak milik pribadi?
+10. Jika sudah melakukan pembayaran, apakah tim saya akan mendapatkan email konfirmasi pembayaran?
+
+Answers 
+-------
+1. Hackathon merupakan perlombaan dalam membuat prototipe aplikasi yang dapat memecahkan permasalahan yang diberikan, yang berlangsung selama 24 jam. 
+2. Ya. Peserta dilarang untuk meninggalkan area Hackathon selama keberlangsungan lomba.
+3. Tidak. Panitia tidak menyediakan transportasi.
+4. Laptop, charger laptop, dan barang-barang kebutuhan pribadi lainnya. Peserta dilarang untuk membawa obat-obat terlarang dan benda-benda tajam yang tidak berhubungan dengan lomba.
+5. XXXX. Untuk informasi selengkapnya dapat dilihat pada rulebook. 
+6. Ya. Untuk framework artificial intelligencenya wajib menggunakan ReNom. Framework lainnya untuk mendukung pembuatan aplikasi berbasis web, mobile, ataupun desktop dibebaskan. Dokumentasi ReNom dapat diakses melalui www.renom.jp. /* url nya dibold aja ci
+7. Sebanyak 30 tim yang akan lolos ke tahap final.
+8. Tidak. Hasil karya aplikasi yang sudah menang sebelumnya tidak boleh dipertandingkan lagi.
+9. Tidak. Konsep, code, maupun prototipe aplikasi dapat dipakai secara keseluruhan oleh pihak Renom Infrastruktur Indonesia.
+10. Ya. Email konfirmasi akan dikirimkan dalam 1 x 24 jam kepada email ketua masing-masing tim. Jika belum mendapatkan email konfirmasi dalam 1 x 24 jam, peserta dapat langsung menghubungi contact person yang tertera.
