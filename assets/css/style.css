@@ -8794,7 +8794,7 @@ textarea.form-control {
       padding: 6em 0; } }
 
 .ftco-bg-dark {
-  background: #3c312e; }
+  background: #301b40; }
 
 .ftco-no-pt {
   padding-top: 0 !important; }
@@ -8826,7 +8826,7 @@ textarea.form-control {
 
 .ftco-footer {
   font-size: 12px; /*edit*/ 
-  background-image: url(../resources/footer/bg-footer.png); /*edit 171717*/
+  background: #301b40;
   padding: 7em 0 4em 0;
   background-size: cover; /*add*/ }
   .ftco-footer .ftco-footer-widget h2 {
@@ -8852,7 +8852,7 @@ textarea.form-control {
   .ftco-footer .ftco-heading-2 {
     font-size: 20px; /*edit*/
     font-weight: 700;
-    color: #000000;
+    color: #FFFFFF;
     position: relative; }
   .ftco-footer .opening-hours h4 {
     color: #fff;
@@ -10228,7 +10228,8 @@ input:focus {
 }
 
 .scrolling-wrapper {
-  &::-webkit-scrollbar {display:none;}}
+  &::-webkit-scrollbar {display:none;}
+}
 
 .scrolling-wrapper {
   -webkit-overflow-scrolling:touch; /*creates bouce effect at end of items */

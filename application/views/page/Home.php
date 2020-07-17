@@ -1,36 +1,41 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>BIOS</title>
+    <title>BIOS</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <?php
-        echo $style;
+    echo $style;
     ?>
 </head>
+
 <body>
     <?php
-        echo $header;
+    echo $header;
     ?>
 
+
     <div class="hero-wrap js-fullheight" style="background-image: url('assets/resources/home/bg-home-main.png');" data-stellar-background-ratio="0.5">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
-          <div class="col-md-10 text-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-            <img class="col-9 col-sm-4" src="<?php echo base_url(); ?>/assets/resources/home/logo-bios.png">
-            <br>
-            <img class="col-7 col-sm-4" src="<?php echo base_url(); ?>/assets/resources/home/font-bios.png" style="margin-bottom:20px">
-            <h3 class="subheading mb-4 pb-1">Building Informatics' Competitive Soul</h3>
-           
-          </div>
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
+                <div class="col-md-10 text-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+                    <img class="col-9 col-sm-4" src="<?php echo base_url(); ?>/assets/resources/home/logo-bios.png">
+                    <br>
+                    <img class="col-7 col-sm-4" src="<?php echo base_url(); ?>/assets/resources/home/font-bios.png" style="margin-bottom:20px">
+                    <h3 class="subheading mb-4 pb-1">Building Informatics' Competitive Soul</h3>
+
+                </div>
+            </div>
         </div>
-      </div>
     </div>
+
+
 
     <section class="ftco-intro py-5" style="background-image: url(assets/resources/home/bg-home2.png);" id="about-section">
         <div class="overlay"></div>
@@ -64,7 +69,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
                 <div class="col-md-6 ftco-animate" style="text-align: right">
                     <h2 style="border-bottom: 5px solid white;"><a href="#" style="font-weight:bold">Hackathon</a></h2>
-                    <p style="color: white">Perlombaan yang menantang peserta untuk memecahkan  problem yang diberikan menjadi sebuah solusi berupa prototipe aplikasi yang inovatif selama 24 jam.</p>
+                    <p style="color: white">Perlombaan yang menantang peserta untuk memecahkan problem yang diberikan menjadi sebuah solusi berupa prototipe aplikasi yang inovatif selama 24 jam.</p>
                     <p><a href="<?php echo base_url() ?>Hackathon" class="btn btn-primary px-4 py-2" style="text-transform: uppercase; font-size: 12px">Read More</a></p>
                 </div>
             </div>
@@ -110,17 +115,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </section>
 
     <?php
-        echo $footer;
+    echo $footer;
     ?>
 </body>
 
 <?php
-    echo $loader;
-    echo $script;
+echo $loader;
+echo $script;
 ?>
 
 <script>
-    $(document).ready(function() {
-    });
+    $(document).ready(function() {});
 </script>
+
 </html>
