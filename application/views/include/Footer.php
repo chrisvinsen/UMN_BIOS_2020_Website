@@ -52,12 +52,12 @@
 
 							<li class="li-footer ftco-animate fadeInUp ftco-animated">
 								<img class="icon-footer mr-3" src="<?php echo base_url(); ?>assets/resources/footer/icon-telephone.png">
-								08972058038
+								08xxxxxxxxxx
 
 							</li>
 							<li class="li-footer ftco-animate fadeInUp ftco-animated">
 								<img class="icon-footer mr-3" src="<?php echo base_url(); ?>assets/resources/footer/icon-line.png">
-								gregoriusneven
+								ID_Line
 							</li>
 						</ul>
 						<h2 class="ftco-heading-2">
@@ -66,12 +66,12 @@
 						<ul class="list-unstyled">
 							<li class="li-footer ftco-animate fadeInUp ftco-animated">
 								<img class="icon-footer mr-3" src="<?php echo base_url(); ?>assets/resources/footer/icon-telephone.png">
-								087751064110
+								08xxxxxxxxxx
 
 							</li>
 							<li class="li-footer ftco-animate fadeInUp ftco-animated">
 								<img class="icon-footer mr-3" src="<?php echo base_url(); ?>assets/resources/footer/icon-line.png">
-								felix_lay
+								ID_Line
 							</li>
 						</ul>
 					</div>
@@ -85,11 +85,11 @@
 						<ul class="list-unstyled">
 							<li class="li-footer ftco-animate fadeInUp ftco-animated">
 								<img class="icon-footer mr-3" src="<?php echo base_url(); ?>assets/resources/footer/icon-telephone.png">
-								08972058038
+								08xxxxxxxxxx
 							</li>
 							<li class="li-footer ftco-animate fadeInUp ftco-animated">
 								<img class="icon-footer mr-3" src="<?php echo base_url(); ?>assets/resources/footer/icon-line.png">
-								gregoriusneven
+								ID_Line
 							</li>
 						</ul>
 						<h2 class="ftco-heading-2">
@@ -98,11 +98,11 @@
 						<ul class="list-unstyled">
 							<li class="li-footer ftco-animate fadeInUp ftco-animated">
 								<img class="icon-footer mr-3" src="<?php echo base_url(); ?>assets/resources/footer/icon-telephone.png">
-								087751064110
+								08xxxxxxxxxx
 							</li>
 							<li class="li-footer ftco-animate fadeInUp ftco-animated">
 								<img class="icon-footer mr-3" src="<?php echo base_url(); ?>assets/resources/footer/icon-line.png">
-								felix_lay
+								ID_Line
 							</li>
 						</ul>
 					</div>
