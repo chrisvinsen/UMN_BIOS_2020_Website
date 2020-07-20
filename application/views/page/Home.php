@@ -19,22 +19,33 @@ defined('BASEPATH') or exit('No direct script access allowed');
     echo $header;
     ?>
 
-
-    <div class="hero-wrap js-fullheight" style="background-image: url('assets/resources/home/bg-home-main.png');" data-stellar-background-ratio="0.5">
-        <div class="overlay"></div>
+    <!-- hero -->
+    <div class="hero-wrap js-fullheight"  data-stellar-background-ratio="0.5">
+        <!-- <div class="overlay"></div> -->
         <div class="container">
             <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
-                <div class="col-md-10 text-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-                    <img class="col-9 col-sm-4" src="<?php echo base_url(); ?>/assets/resources/home/logo-bios.png">
+                <div class="col-md-10 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+                    <!-- <img class="col-9 col-sm-4" src="<?php echo base_url(); ?>/assets/resources/home/logo-bios.png">
                     <br>
-                    <img class="col-7 col-sm-4" src="<?php echo base_url(); ?>/assets/resources/home/font-bios.png" style="margin-bottom:20px">
-                    <h3 class="subheading mb-4 pb-1">Building Informatics' Competitive Soul</h3>
-
+                    <img class="col-7 col-sm-4" src="<?php echo base_url(); ?>/assets/resources/home/font-bios.png" style="margin-bottom:20px"> -->
+                    <div class="box">
+                        <h2 class="featured">SELAMAT DATANG</h2>
+                    </div>
+                    <div class="box"><h3 class="featured">DI <b>BIOS 2020</b></h3></div>
+                    <div class="featured-info"><p>Hackathon merupakan ajang kompetisi software development yang di laksanakan dalam durasi 24 jam.</p></div>
+                    <div class="container" id="container2">
+                        <button class="btn btn-login" ><a href="<?php echo base_url()?>admin">Login</a> </button>
+                        <button class="btn btn-signUp"><a href="<?php echo base_url()?>signup">Sign Up</a> </button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
 
+            <!-- <div class="hero-title">
+                Selamat Datang Di <b>BIOS 2020</b>
+            </div> -->
+        </div>
+    </div>  
+    <!-- hero end -->
 
 
     <section class="ftco-intro py-5" style="background-color:#ab206c" id="about-section">
