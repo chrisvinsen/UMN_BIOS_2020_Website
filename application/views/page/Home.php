@@ -34,8 +34,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <div class="box"><h3 class="featured">DI <b>BIOS 2020</b></h3></div>
                     <div class="featured-info"><p>Hackathon merupakan ajang kompetisi software development yang di laksanakan dalam durasi 24 jam.</p></div>
                     <div class="container" id="container2">
-                        <button class="btn btn-login" ><a href="<?php echo base_url()?>admin">Login</a> </button>
-                        <button class="btn btn-signUp"><a href="<?php echo base_url()?>signup">Sign Up</a> </button>
+                        <button class="btn btn-login" ><a href="<?php echo base_url()?>signin">SIGN IN</a> </button>
+                        <button class="btn btn-signUp"><a href="<?php echo base_url()?>signup">SIGN UP</a> </button>
                     </div>
                 </div>
             </div>

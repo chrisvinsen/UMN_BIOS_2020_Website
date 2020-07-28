@@ -7,15 +7,15 @@
 			<span class="oi oi-menu"></span> Menu
 		</button>
 
-		<div class="collapse navbar-collapse" id="ftco-nav">
-			<ul class="navbar-nav nav " style="margin-right: auto !important">
-
-			</ul>
-			<ul class="navbar-nav nav ml-auto">
+		<div class="collapse navbar-collapse" id="ftco-nav" style="justify-content: space-between;">
+			
+			<ul class="navbar-nav nav" >
 				<li class="nav-item"><a href="<?php echo base_url(); ?>Hackathon" class="nav-link"><span>Hackathon</span></a></li>
 				<li class="nav-item"><a href="<?php echo base_url(); ?>Seminar" class="nav-link"><span>Seminar</span></a></li>
 				<li class="nav-item"><a href="<?php if (strpos($_SERVER['REQUEST_URI'], 'Hackathon') || strpos($_SERVER['REQUEST_URI'], 'Seminar')) echo base_url() . "#about-section";
 												else echo "#about-section"; ?>" class="nav-link"><span>About</span></a></li>
+				
+				
 				<!-- <?php if (isset($_SESSION['gname'])) { ?>
 					<li class="nav-item"><a href="<?php echo base_url(); ?>GroupName" class="nav-link"><span><?php echo $_SESSION['gname']; ?></span></a></li>
 				<?php } ?>
@@ -28,6 +28,22 @@
 				<?php if (isset($_SESSION['gname'])) { ?>
 					<li class="nav-item"><a href="<?php echo base_url(); ?>GroupName/signOut" class="nav-link"><span>Signout</span></a></li>
 				<?php } ?> -->
+			</ul>
+
+			<ul class="navbar-nav nav" >
+					<?php if(!isset($_SESSION['gname'])){ ?>
+				<li class="nav-item" style="margin-right:10px;">
+
+						<button class="btn btn-login " ><a href="<?php echo base_url()?>signin">SIGN IN</a> </button>
+				</li>
+				<li class="nav-item">
+						<button class="btn btn-signUp " ><a href="<?php echo base_url()?>signup">SIGN UP</a> </button>
+				</li>
+					<?php }else {?>
+						<li class="nav-item">
+							<button class="btn btn-signUp " ><a href="<?php echo base_url()?>GroupName/signOut">LOGOUT</a> </button>
+						</li>
+					<?php }?>
 			</ul>
 		</div>
 	</div>
