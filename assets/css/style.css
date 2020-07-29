@@ -8029,7 +8029,8 @@ h1, h2, h3, h4, h5,
     .ftco-navbar-light {
       /*background: #000000 !important;*/ /*delete*/
       /* background-image: url('../resources/home/navbar.png') !important;  add */
-      background-color: #81295a !important;
+      /* Moya ubah warna */
+      background-color: #301b40 !important;
       position: relative;
       top: 0; } }
   .ftco-navbar-light .ftco-social {
@@ -8155,8 +8156,8 @@ h1, h2, h3, h4, h5,
     margin-top: -130px;
     /* background-image: url('../resources/home/navbar.png') !important;  edit */
     /*background: #fff !important;*/
-
-    background-color:#81295a !important;
+    /* Moya Ubah warna */
+    background-color:#301b40 !important;
     -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1); }
 
@@ -10008,8 +10009,9 @@ textarea.form-control {
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
-  border: 2px solid white;
-  background-color: #123557;
+  border: 4px solid white;
+  border-radius: 6px;
+  background-color: #301b40;
 }
 
 .login-input::placeholder { /* Firefox, Chrome, Opera */ 
