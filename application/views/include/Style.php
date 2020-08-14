@@ -22,5 +22,9 @@
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/icomoon.css">
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
 
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/icon-fonts.css">
+
+
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/jquery.toast.css">
 
+<script src="https://kit.fontawesome.com/2d31a0f03c.js" crossorigin="anonymous"></script>
