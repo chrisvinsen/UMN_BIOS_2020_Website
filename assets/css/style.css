@@ -444,7 +444,8 @@ pre {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
-  margin-left: auto; }
+  margin-left: auto; 
+}
   @media (min-width: 576px) {
     .container {
       max-width: 540px; } }
@@ -472,7 +473,8 @@ pre {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin-right: -15px;
-  margin-left: -15px; }
+  margin-left: -15px; 
+}
 
 .no-gutters {
   margin-right: 0;
@@ -10396,3 +10398,12 @@ body{
   }
 }
 
+.icon-Hackathon{
+  position: relative;
+  top: 5px;
+  left: 5px;
+}
+
+.color-2{
+  color:#301b40;
+}
