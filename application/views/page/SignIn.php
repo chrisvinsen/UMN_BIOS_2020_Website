@@ -1,11 +1,19 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+    defined('BASEPATH') OR exit('No direct script access allowed');
+
+    if (isset($_SESSION['user_data'])) {
+        echo ("<script>location.href='GroupName'</script>");
+    } 
+    if(isset($_SESSION['activated'])) {
+        echo ("<script>alert('Team account has been successfully activated, please log in now.')</script>");
+    }
+
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>BIOS</title>
+    <title>BIOS</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <?php
@@ -16,44 +24,41 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <?php
         echo $header;
     ?> 
-
-    <section class="ftco-intro py-5" style="background-image: url(<?php echo base_url(); ?>assets/resources/home/bg-acara.jpg);">
+    
+    <section class="ftco-intro py-5" style="background-image: url(<?php echo base_url(); ?>assets/img/registration-img.png);">
         <div class="overlay"></div>
         <div class="container" style="margin-top:100px">
-            
             <div class="row d-flex align-items-center">
-                <div class="col-md-3 ftco-animate bg-blue-acara" >
-                </div>
-                <div class="col-md-6 ftco-animate bg-blue-acara" style="background-color: #123557; border: 1px solid white;">
-                    <div class="col-md-12 center-text" style="margin-bottom: 50px">
-                        <img class="col-7 col-sm-4" src="<?php echo base_url(); ?>/assets/resources/home/font-bios.png">
+                <div class="col-lg-6 col-md-8 mx-auto d-block ftco-animate box-bios">
+                    <div class="mb-5">
+                        <img class="mx-auto d-block" src="<?php echo base_url(); ?>/assets/img/logo-text.png" width="175px">
                     </div>
-
-                    <form class="col-md-12" id="form" onsubmit="return false;" style="margin-top: 30px">
-                        <input id="gname" class="login-input" type="text" placeholder="Group Name" name="gname" required style="color: white;">
-                        <input id="pass" class="login-input" type="password" placeholder="Password" name="pass" required style="color: white;">
-
-                        <label class="col-md-6">
-                            <input type="checkbox" class="checkbox_check" id="remember_me"> Remember me
-                        </label>
-                        <label class="col-md-6" style=" text-align: right; float: right;">
-                            <a href="<?php echo base_url() ?>UpdatePassword" style="color: white;">Forgot your password?</a>
-                        </label>
-                        
-                        <div class="col-md-12" style="text-align: center; margin-top: 20px">
-                            <input type="submit" onclick="signInAction()" class="btn btn-primary px-4 py-2" style="color: white; text-align: center; margin-bottom: 0.3rem !important; font-size: 16px" value="SIGN IN">
+                    <form id="form" onsubmit="return false;">
+                        <div class="ftco-animate row" style="float: right;">
+                            <div class="col-md-12 my-3">
+                                <input class="custom-input-signin" type="text" name="group_name" id="group_name" placeholder="Group Name">
+                            </div>
+                            <div class="col-md-12 my-2">
+                                <input class="custom-input-signin" type="password" name="password" id="password" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="d-inline-block w-100">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input checkbox_check" id="remember_me">
+                                <label class="custom-control-label" for="remember_me"><small> Remember Me </small></label>
+                                <small class="float-right"><a href="javascript:void(0)"> Forget your password? </a></small>
+                            </div>
+                            <span id="error_message" class="text-danger" style="font-weight: 700"></span>
+                        </div>                        
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn px-5 py-2 mx-auto d-block custom-btn-signin text-white">LOGIN</button>
+                            <small>Don't have an account yet? <a class="font-weight-bold" href="<?php echo base_url()?>signup"> Sign Up </a></small>
                         </div>
                     </form>
-                        <p style="font-size: 9px; text-align: center;  margin-top: 10px">Don't have an account yet? <a href="<?php echo base_url(); ?>SignUp" style="color: white"><strong>Sign Up</strong></a></p>
-                </div>
-                <div class="col-md-3 ftco-animate bg-blue-acara" >
                 </div>
             </div>   
-
         </div>
     </section>
-
-
     <?php
         echo $footer;
     ?>
@@ -65,63 +70,45 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
 <script>
-    $(document).ready(function() {
-        if (localStorage.chkbx && localStorage.chkbx != '') {
-            $('#remember_me').attr('checked', 'checked');
-            $('#gname').val(localStorage.gname);
-            $('#pass').val(localStorage.pass);
-        } else {
-            $('#remember_me').removeAttr('checked');
-            $('#loginEmail').val('');
-            $('#loginPW').val('');
+    $("#form").on('submit', function(event) {
+        event.preventDefault();
+
+        data = new FormData();
+        group_name = $("#group_name").val()
+        password = $("#password").val()
+        remember_me = false;
+        if ($('#remember_me').is(":checked")) {
+            remember_me = true;
         }
-        $('#remember_me').click(function() {
 
-            if ($('#remember_me').is(':checked')) {
-                // save username and password
-                localStorage.gname = $('#gname').val();
-                localStorage.pass = $('#pass').val();
-                localStorage.chkbx = $('#remember_me').val();
-            } else {
-                localStorage.usrname = '';
-                localStorage.pass = '';
-                localStorage.chkbx = '';
-            }
-        });
-    });
+        if (group_name == "" || password == "") {
+            $("#error_message").text("*Group name and password must be filled in.")
+        } else {
+            data.append('group_name', group_name);
+            data.append('password', password);
+            data.append('remember_me', remember_me);
 
-
-    function signInAction() {
-        $('#ftco-loader').addClass("show");
-        
-        var form_data = new FormData($("#form")[0]);   
-        $.ajax({
-            type: "POST",
-            dataType: "JSON",
-            async: true,
-            cache: false,
-            processData: false,
-            contentType: false,
-            url: "<?php echo base_url(); ?>SignIn/action",
-            data: form_data,
-            success: function(ret) {
-                console.log(ret.status);
-                if(ret.status==true){
-                    window.location.assign("<?php echo base_url(); ?>GroupName");
+            $.ajax({
+                type: "POST",
+                dataType: "JSON",
+                async: true,
+                cache: false,
+                processData: false,
+                contentType: false,
+                url: "<?php echo base_url(); ?>SignIn/action",
+                data: data,
+                success: function(res) {
+                    if (!res.status) {
+                        $("#error_message").text(res.message)
+                    } else {
+                        window.location.href = "<?php echo base_url(); ?>GroupName";
+                    }
+                },
+                error: function(res) {
+                    $("#error_message").text("*Something wrong, please try again later.")
                 }
-                else{
-                    alert("Group name and password doesn't match");
-                }
-                // alert(ret.firstName[0]);
-            },
-            error: function(ret) {
-                console.log("error");
-                console.log(ret.status);
-            },
-            complete: function(ret) {
-                $('#ftco-loader').removeClass("show");
-            }
-        });
-    }
+            });
+        }
+    })
 </script>
 </html>

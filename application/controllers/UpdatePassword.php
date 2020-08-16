@@ -5,10 +5,13 @@ class UpdatePassword extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->model('HackathonModel');
+		$this->load->library('session');
 	}
 
 	public function index()
 	{
+		$data['script'] = $this->load->view('include/Script', NULL, TRUE);
+
 		$data['script'] = $this->load->view('include/Script', NULL, TRUE);
 		$data['style'] = $this->load->view('include/Style', NULL, TRUE);
 		$data['footer'] = $this->load->view('include/Footer', NULL, TRUE);
@@ -145,7 +148,7 @@ class UpdatePassword extends CI_Controller {
 		$groupdetail = $this->HackathonModel->isTokenValid($cleanToken); //either false or array();    
 		if(!$groupdetail){  
 			$this->session->set_flashdata('sukses', 'Token tidak valid atau kadaluarsa');  
-			redirect(site_url('login'),'refresh');   
+			redirect(site_url('login'), 'refresh');   
 		}    
 		$post = $this->input->post(NULL, TRUE);          
 		$cleanPost = $this->security->xss_clean($post);          

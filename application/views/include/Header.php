@@ -16,22 +16,22 @@
 												else echo "#about-section"; ?>" class="nav-link"><span>About</span></a></li>
 				
 				
-				<!-- <?php if (isset($_SESSION['gname'])) { ?>
-					<li class="nav-item"><a href="<?php echo base_url(); ?>GroupName" class="nav-link"><span><?php echo $_SESSION['gname']; ?></span></a></li>
+				<!-- <?php if (isset($_SESSION['user_data'])) { ?>
+					<li class="nav-item"><a href="<?php echo base_url(); ?>GroupName" class="nav-link"><span><?php echo $_SESSION['user_data']; ?></span></a></li>
 				<?php } ?>
-				<?php if (!isset($_SESSION['gname'])) { ?>
+				<?php if (!isset($_SESSION['user_data'])) { ?>
 					<li class="nav-item"><a href="<?php echo base_url(); ?>SignIn" class="nav-link"><span>Sign In</span></a></li>
 				<?php } ?>
-				<?php if (!isset($_SESSION['gname'])) { ?>
+				<?php if (!isset($_SESSION['user_data'])) { ?>
 					<li class="nav-item"><a href="<?php echo base_url(); ?>SignUp" class="nav-link"><span>Sign Up</span></a></li>
 				<?php } ?>
-				<?php if (isset($_SESSION['gname'])) { ?>
+				<?php if (isset($_SESSION['user_data'])) { ?>
 					<li class="nav-item"><a href="<?php echo base_url(); ?>GroupName/signOut" class="nav-link"><span>Signout</span></a></li>
 				<?php } ?> -->
 			</ul>
 
 			<ul class="navbar-nav nav" >
-					<?php if(!isset($_SESSION['gname'])){ ?>
+					<?php if(!isset($_SESSION['user_data'])){ ?>
 				<li class="nav-item" style="margin-right:10px;">
 
 						<button class="btn btn-login " ><a href="<?php echo base_url()?>signin">SIGN IN</a> </button>

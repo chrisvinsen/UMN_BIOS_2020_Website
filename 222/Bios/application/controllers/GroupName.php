@@ -9,8 +9,8 @@ class GroupName extends CI_Controller {
 
 	public function index()
 	{
-		if (isset($_SESSION['gname'])) {
-			$gname = $_SESSION['gname'];
+		if (isset($_SESSION['user_data'])) {
+			$gname = $_SESSION['user_data']['gname'];
 	        $data['gname'] = $gname;
 			$groupdetail = $this->HackathonModel->select_data($data,'groupdetail');
 			$data2['groupId'] = $groupdetail['id'] ;
@@ -44,7 +44,7 @@ class GroupName extends CI_Controller {
 		$idLine=$this->input->post('idLine');		
 		$fileCardBefore=$this->input->post('fileCardBefore');
 
-		$gname=$_SESSION['gname'];		
+		$gname=$_SESSION['user_data']['gname'];		
 
 		$return = new stdClass();
 
