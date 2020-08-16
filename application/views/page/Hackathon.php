@@ -18,12 +18,138 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<?php
 	echo $header;
 	?>
-	<section class="ftco-intro py-5" style="background-image: url(<?php echo base_url('assets/resources/home/bg-home2.png'); ?>">
+	<section class="ftco-intro py-5" style="background-color: #ab206c">
 		<div class="overlay"></div>
-		<div class="container" style="margin-top:100px">
+		<div class="container">
+			<div class="row d-flex align-items-center" style="margin-top: 60px;">
+				<div class="col-md-6 ftco-animate">
+					<img class="col-12 col-sm-12" src="<?php echo base_url('assets/img/Hackathon/Asset-1.png'); ?>">
+				</div>
+				<div class="col-md-6 pl-md-5 ftco-animate" style="padding: 20px">
 
+					<h4 class="Hackathon"><a href="#" style="font-weight:bold">Hackathon</a></h4>
+
+					<h2 style="color:#fff;font-weight:bold">
+						BIOS Hackathon
+						<br style="line-height:2px">
+						"Improving The Society"
+					</h2>
+					<div class="col-md-3" style="font-size: 12px; float: left">
+						<strong>Powered By</strong>
+					</div>
+					<div class="col-md-6 d-flex" style="background-color: #301b40; border-radius: 15px; padding: 10px;">
+						<div class="col-md-12" style="float: left; margin-top: 5px; padding: 0px">
+							<img src="<?php echo base_url('/assets/resources/hackathon/sponsor-2.png') ?>" ; class=" col-12" style="margin: 0px; padding: 0px">
+						</div>
+					</div>
+					<br>
+					<hr style="margin:0px;width:100%;border-color:#ffffff;background-color:#ffffff">
+<<<<<<< Updated upstream
+					<br style="line-height:2px">
+					<div class="">
+						<img class="mr-3" src="<?php echo base_url('/assets/img/Hackathon/icon-date.png') ?>">
+						<span>09 April 2020</span>
+						<img class="mr-3" src="<?php echo base_url('/assets/img/Hackathon/icon-maps.png') ?>" style="padding-left:5em">
+						<span>Zoom</span>
+						<br>
+						<img class="mr-3" src="<?php echo base_url('/assets/img/Hackathon/icon-time.png') ?>">
+						<span>10:00 WIB</span>
+=======
+					<div class="col-md-5 col-xs-12 div-seminar">
+						<ul class="list-unstyled">
+							<li class="li-footer ftco-animate fadeInUp ftco-animated">
+								<div style="display:flex">
+									<p class="li-footer">
+										<img class="icon-footer mr-3" src="<?php echo base_url('/assets/img/Hackathon/icon-date.png'); ?>">
+										09 April 2020
+									</p>
+								</div>
+
+							</li>
+							<li class="ftco-animate fadeInUp ftco-animated">
+								<img class="icon-footer mr-3" src="<?php echo base_url('/assets/img/Hackathon/icon-time.png'); ?>">
+								24 Hours
+							</li>
+						</ul>
+>>>>>>> Stashed changes
+					</div>
+				</div>
+			</div>
+			<div class=" row d-flex align-items-center">
+				<div class="col-md-6 pl-md-5 ftco-animate" style="padding: 20px">
+					<h2><a href="#" style="font-weight:bold">Be Our Participant</a></h2>
+					<hr style="margin:0px;width:55%;border-color:#ffffff;background-color:#ffffff">
+					<p class="fa fa-check-square color-2">
+						<span style="color:white;"><strong>CHANCE</strong> go to Japan with Grid</span>
+					</p><br>
+					<p class="fa fa-check-square color-2">
+						<span style="color:white;">
+							<strong>MENTORING</strong> from experts
+						</span>
+					</p><br>
+					<p class="fa fa-check-square color-2">
+						<span style="color:white;">
+							<strong>CHANCE</strong> to get incubation program from RII with total additional prize Rp 15.000.000!
+						</span>
+					</p><br>
+					<p class="fa fa-check-square color-2">
+						<span style="color:white;">
+							<strong>FREE</strong> access to MakeAI courses for top 10 finalists
+						</span>
+					</p><br>
+					<p class="fa fa-check-square color-2">
+						<span style="color:white;">
+							<strong>Making</strong> new connections with other participants, mentors, and judges
+						</span>
+					</p>
+
+
+				</div>
+				<div class="col-md-6 pl-md-5 ftco-animate">
+					<img class="col-12 col-sm-12" src="<?php echo base_url('/assets/img/Hackathon/Asset-2.png'); ?>">
+				</div>
+				<div class="row d-flex align-items-center" style="padding: 20px; background:url(<?php echo base_url('assets/img/Hackathon/bg3.png'); ?>) no-repeat ">
+					<div class="col-md-2 ftco-animate">
+						<img class="col-12 col-sm-12" src="<?php echo base_url('assets/img/shadow.png'); ?>">
+					</div>
+					<div class="col-md-8 ftco-animate">
+						<h2 style=" text-align:center;"><a href="#" style="font-weight:bold">Prize Pool</a></h2>
+						<hr style="width:20%;border-color:#FFF;background-color:#fff;height:2px;">
+						<div class="col-md-12 d-flex" style=" border-radius: 25px; padding: 10px;">
+							<div class="col-md-4" style="float: left">
+								<img src="<?php echo base_url('assets/img/Hackathon/trophy-1-hackathon.png'); ?>" class="col-12" style="margin: 0px; padding: 0px">
+							</div>
+							<div class="col-md-4" style="float: left">
+								<img src="<?php echo base_url('assets/img/Hackathon/trophy-2-hackathon.png'); ?>" class="col-12" style="margin: 0px; padding: 0px">
+							</div>
+							<div class="col-md-4" style="float: left">
+								<img src="<?php echo base_url('assets/img/Hackathon/trophy-3-hackathon.png'); ?>" class="col-12" style="margin: 0px; padding: 0px">
+							</div>
+						</div>
+						<h2 style=" text-align:center;"><a href="#" style="font-weight:bold">Facilities</a></h2>
+						<hr style="width:20%;border-color:#FFF;background-color:#fff;height:2px;">
+						<div class="col-md-12 d-flex" style=" border-radius: 25px; padding: 10px;">
+							<div class="col-md-4" style="text-align:center">
+								<p>24 Hours Wifi</p>
+							</div>
+							<div class="col-md-4" style="text-align:center">
+								<p>Exclusive Mentoring</p>
+							</div>
+							<div class="col-md-4" style="text-align:center">
+								<p>Free Snack bar</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-2 ftco-animate">
+						<img class="col-12 col-sm-12" src="<?php echo base_url('assets/img/shadow.png'); ?>">
+					</div>
+				</div>
+			</div>
 			<div class="row d-flex align-items-center">
 				<div class="col-md-6 ftco-animate bg-blue-acara" style="background-color: #725b71">
+					<div style="text-align: left">
+						<img class="col-5" src="<?php echo base_url('/assets/resources/home/logo-hmif.png'); ?>" style="background-color: white; border-radius: 50px; padding: 10px; padding-left: 30px;  padding-right: 30px; margin-top: 20px">
+					</div>
 					<p class="btn-disabled-judul-acara px-4 py-2" style="width: 125px; color: #725b71">Hackathon</p>
 					<h2><a href="#" style="font-weight:bold"><strong>BIOS Hackathon</strong><br><i>"Improving The Society"</i></a></h2>
 
@@ -441,8 +567,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						</div>
 					</div>
 				</div>
-
 			</div>
+
 	</section>
 
 

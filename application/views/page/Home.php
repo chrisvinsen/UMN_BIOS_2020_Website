@@ -20,7 +20,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     ?>
 
     <!-- hero -->
-    <div class="hero-wrap js-fullheight"  data-stellar-background-ratio="0.5">
+    <div class="hero-wrap js-fullheight" data-stellar-background-ratio="0.5">
         <!-- <div class="overlay"></div> -->
         <div class="container">
             <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
@@ -31,8 +31,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <div class="box">
                         <h2 class="featured">SELAMAT DATANG</h2>
                     </div>
-                    <div class="box"><h3 class="featured">DI <b>BIOS 2020</b></h3></div>
-                    <div class="featured-info"><p>Hackathon merupakan ajang kompetisi software development yang di laksanakan dalam durasi 24 jam.</p></div>
+                    <div class="box">
+                        <h3 class="featured">DI <b>BIOS 2020</b></h3>
+                    </div>
+                    <div class="featured-info">
+                        <p>Hackathon merupakan ajang kompetisi software development yang di laksanakan dalam durasi 24 jam.</p>
+                    </div>
                     <div class="container" id="container2">
                         <a href="<?php echo base_url()?>signin" class="btn btn-login" style="color: white;">SIGN IN</a>
                         <a href="<?php echo base_url()?>signup" class="btn btn-signUp" style="color: white;">SIGN UP</a>
@@ -44,7 +48,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 Selamat Datang Di <b>BIOS 2020</b>
             </div> -->
         </div>
-    </div>  
+    </div>
     <!-- hero end -->
 
 
