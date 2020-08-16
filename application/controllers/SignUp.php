@@ -29,10 +29,8 @@ class SignUp extends CI_Controller
 		$config['protocol'] = 'smtp';
 		$config['smtp_host'] = 'ssl://smtp.googlemail.com';
 		$config['smtp_port'] = 465;
-		// $config['smtp_user'] = 'bios@umn.ac.id';
-		$config['smtp_user'] = 'printugasen@gmail.com';
-		// $config['smtp_pass'] = 'biosHMIF';
-		$config['smtp_pass'] = 'sentugasprint';
+		$config['smtp_user'] = 'bios@umn.ac.id';
+		$config['smtp_pass'] = 'biosHMIF';
 
 		$config['mailtype'] = 'html';
 		$config['charset'] = 'iso-8859-1';
@@ -41,7 +39,7 @@ class SignUp extends CI_Controller
 		$this->load->library('email', $config);
 		$this->email->set_newline("\r\n");
 
-		$this->email->from('printugasen@gmail.com', 'BIOS UMN');
+		$this->email->from('bios@umn.ac.id', 'BIOS UMN');
 		$this->email->to($email);
 		$this->email->subject('Konfirmasi Email');
 
