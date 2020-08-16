@@ -16,16 +16,16 @@
 				<li class="nav-item"><a  href="#contact-us" class="nav-link"><span>Contact Us</span></a></li>
 			</ul>
 			<ul class="navbar-nav nav ml-auto">
-				<?php if (isset($_SESSION['gname'])) {?>
-					<li class="nav-item"><a href="<?php echo base_url(); ?>GroupName" class="nav-link"><span><?php echo $_SESSION['gname'];?></span></a></li>
+				<?php if (isset($_SESSION['user_data'])) {?>
+					<li class="nav-item"><a href="<?php echo base_url(); ?>GroupName" class="nav-link"><span><?php echo $_SESSION['user_data']['gname'];?></span></a></li>
 				<?php } ?>
-				<?php if (!isset($_SESSION['gname'])) {?>
+				<?php if (!isset($_SESSION['user_data'])) {?>
 					<li class="nav-item"><a href="<?php echo base_url(); ?>SignIn" class="nav-link"><span>Sign In</span></a></li>
 				<?php } ?>
-				<?php if (!isset($_SESSION['gname'])) {?>
+				<?php if (!isset($_SESSION['user_data'])) {?>
 					<li class="nav-item"><a href="<?php echo base_url(); ?>SignUp" class="nav-link"><span>Sign Up</span></a></li>
 				<?php } ?>
-				<?php if (isset($_SESSION['gname'])) {?>
+				<?php if (isset($_SESSION['user_data'])) {?>
 					<li class="nav-item"><a href="<?php echo base_url(); ?>GroupName/signOut" class="nav-link"><span>Signout</span></a></li>
 				<?php } ?>
 			</ul>

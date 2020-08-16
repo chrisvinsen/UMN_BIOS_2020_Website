@@ -15,6 +15,6 @@ class Seminar extends CI_Controller
 		$data['footer'] = $this->load->view('include/Footer', NULL, TRUE);
 		$data['header'] = $this->load->view('include/Header', NULL, TRUE);
 		$data['loader'] = $this->load->view('include/Loader', NULL, TRUE);
-		$this->load->view('page/Seminar.php', $data);
+		$this->load->view('page/webinar.php', $data);
 	}
 }

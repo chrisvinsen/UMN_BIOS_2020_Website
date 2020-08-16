@@ -5,34 +5,46 @@ class GroupName extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->model('HackathonModel');
+		$this->load->library('session');
 	}
 
-	public function index()
-	{
-		if (isset($_SESSION['gname'])) {
-			$gname = $_SESSION['gname'];
-	        $data['gname'] = $gname;
-			$groupdetail = $this->HackathonModel->select_data($data,'groupdetail');
-			$data2['groupId'] = $groupdetail['id'] ;
-			$personId = $this->HackathonModel->select_array_data($data2,'group');
-
-			$i=0;
-			foreach ($personId as $key) {
-				$data3['id'] = $key['personId'];
-				$persondetail[$i++] = $this->HackathonModel->select_array_data($data3,'persondetail');
+	public function index() {
+		if (isset($_SESSION['user_data'])) {
+			if ($_SESSION['user_data']['limit_login'] == 0) {
+				$this->session->sess_destroy();
+				redirect(base_url() . "signin");
 			}
-			$data['groupdetail'] = $groupdetail;
-			$data['persondetail'] = $persondetail;
+			if ($_SESSION['user_data']['gname'] != "" && $_SESSION['user_data']['limit_login'] > 0) {
+				if ($_SESSION['user_data']['remember_me'] == 'false') {
+					$_SESSION['user_data']['limit_login'] = $_SESSION['user_data']['limit_login'] - 1;
+				}
+				$gname = $_SESSION['user_data']['gname'];
+		        $data['gname'] = $gname;
+				$groupdetail = $this->HackathonModel->select_data($data,'groupdetail');
+				$data2['groupId'] = $groupdetail['id'] ;
+				$personId = $this->HackathonModel->select_array_data($data2,'group');
+
+				$i=0;
+				foreach ($personId as $key) {
+					$data3['id'] = $key['personId'];
+					$persondetail[$i++] = $this->HackathonModel->select_array_data($data3,'persondetail');
+				}
+				$data['groupdetail'] = $groupdetail;
+				$data['persondetail'] = $persondetail;
+				
+				$data['script'] = $this->load->view('include/Script', NULL, TRUE);
+				$data['style'] = $this->load->view('include/Style', NULL, TRUE);
+				$data['footer'] = $this->load->view('include/Footer', NULL, TRUE);
+				$data['header'] = $this->load->view('include/Header', NULL, TRUE);
+				$data['loader'] = $this->load->view('include/Loader', NULL, TRUE);		
+				$this->load->view('page/GroupName.php', $data);
+			} 
+		} else {
+			redirect(base_url() . "signin");
 		}
-		$data['script'] = $this->load->view('include/Script', NULL, TRUE);
-		$data['style'] = $this->load->view('include/Style', NULL, TRUE);
-		$data['footer'] = $this->load->view('include/Footer', NULL, TRUE);
-		$data['header'] = $this->load->view('include/Header', NULL, TRUE);
-		$data['loader'] = $this->load->view('include/Loader', NULL, TRUE);		
-		$this->load->view('page/GroupName.php', $data);
 	}
 
-	public function action(){
+	public function action() {
 
 		$id=$this->input->post('id');
 		$firstName=$this->input->post('firstName');
@@ -44,7 +56,7 @@ class GroupName extends CI_Controller {
 		$idLine=$this->input->post('idLine');		
 		$fileCardBefore=$this->input->post('fileCardBefore');
 
-		$gname=$_SESSION['gname'];		
+		$gname=$_SESSION['user_data']['gname'];		
 
 		$return = new stdClass();
 
@@ -87,9 +99,8 @@ class GroupName extends CI_Controller {
 			foreach ($fileCardBefore as $key ) {
 				$person[$i++]['fileCard'] = $key;
 			}		
-		// var_dump($person);
 
-		// persondeta
+		// persondata
 		$i=0;
 		$iPerson = 0;
 		foreach ($person as $data) {
@@ -97,13 +108,8 @@ class GroupName extends CI_Controller {
 			$iPerson++;
 			$persondetail[$i++] = $this->HackathonModel->update_data($data,'persondetail');
 		}
-		// echo "---------------------------\n";
-		// var_dump($persondetail);
-
 		$data2['gname'] = $gname;
 		$groupdetail = $this->HackathonModel->select_data($data2,'groupdetail');
-
-		// var_dump($groupdetail);
 
 
 		if(!empty($_FILES['fileCard']['name'])){
@@ -255,9 +261,18 @@ class GroupName extends CI_Controller {
 		echo json_encode($return);
 	}
 
-	public function signOut(){
+	public function signOut() {
 		$this->session->sess_destroy();
 		redirect(base_url());
+	}
+
+	public function activate() {
+		$data['token'] = $this->input->get('token', TRUE);
+		$groupdetail = $this->HackathonModel->select_data($data,'groupdetail');
+		$groupdetail['activated'] =  1;
+	    $this->HackathonModel->update_data($groupdetail, "groupdetail");
+	    $this->session->set_flashdata('activated', 'true');
+   		redirect(base_url() . "signin");
 	}
 
 }

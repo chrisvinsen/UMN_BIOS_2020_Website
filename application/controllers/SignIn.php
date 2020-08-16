@@ -5,13 +5,14 @@ class SignIn extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->model('HackathonModel');
+		$this->load->library('session');
 	}
 
 	public function index()
 	{
-		// if (isset($_SESSION['gname'])) {
-		// 	redirect(base_url().'transaction/view_aju',$data);
-		// }
+		$data['script'] = $this->load->view('include/Script', NULL, TRUE);
+
+		
 		$data['script'] = $this->load->view('include/Script', NULL, TRUE);
 		$data['style'] = $this->load->view('include/Style', NULL, TRUE);
 		$data['footer'] = $this->load->view('include/Footer', NULL, TRUE);
@@ -22,25 +23,39 @@ class SignIn extends CI_Controller {
 
 	public function action()
 	{
-		$gname=trim($this->input->post('gname'));
-		$pass=trim($this->input->post('pass'));
+		$group_name = trim($this->input->post('group_name'));
+		$password = trim($this->input->post('password'));
+		$remember_me = trim($this->input->post('remember_me'));
 
 		$return = new stdClass();
 
-		$status = false;
-
-        $data['gname'] = $gname;
-        $data['pass'] = md5($pass."bios2019mantap");
+        $data['gname'] = $group_name;
+        $data['pass'] = md5($password."bios2019mantap");
 		$result = $this->HackathonModel->select_data($data,'groupdetail');
 
+		$response = array(
+	        'status'  		=> true,
+	        'message'		=> "",
+		);
+
 		if($result){
-			$this->session->set_userdata('gname', $result['gname']);
-			$status = true;
+			if ($result['activated'] == 0) {
+				$response['status'] = false;
+				$response['message'] = "*Please activate your account via the email that was sent to the email leader.";
+			} else {
+				$user_data = array(
+			        'gname'  		=> $result['gname'],
+			        'remember_me'	=> $remember_me,
+			        'limit_login'	=> 3,
+				);
+				$this->session->set_userdata('user_data', $user_data);
+			}
+		} else {
+			$response['status'] = false;
+			$response['message'] = "*Incorrect group name or password.";
 		}
-
-		$return->status = $status;
-
-		echo json_encode($return);
+		$this->output->set_status_header('200');
+		
+		echo json_encode($response);
 	}
-
 }
