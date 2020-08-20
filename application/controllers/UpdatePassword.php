@@ -7,10 +7,13 @@ class UpdatePassword extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('HackathonModel');
+		$this->load->library('session');
 	}
 
 	public function index()
 	{
+		$data['script'] = $this->load->view('include/Script', NULL, TRUE);
+
 		$data['script'] = $this->load->view('include/Script', NULL, TRUE);
 		$data['style'] = $this->load->view('include/Style', NULL, TRUE);
 		$data['footer'] = $this->load->view('include/Footer', NULL, TRUE);
@@ -116,17 +119,17 @@ class UpdatePassword extends CI_Controller
 		$token = $this->uri->segment(4);;
 		$cleanToken = $this->security->xss_clean($token);
 		$groupdetail = $this->HackathonModel->isTokenValid($cleanToken); //either false or array();    
-		if (!$groupdetail) {
-			$this->session->set_flashdata('sukses', 'Token tidak valid atau kadaluarsa');
-			redirect(site_url('login'), 'refresh');
-		}
-		$post = $this->input->post(NULL, TRUE);
-		$cleanPost = $this->security->xss_clean($post);
-		$hashed = md5($cleanPost['pass'] . "bios2019mantap");
-		$cleanPost['pass'] = $hashed;
-		$cleanPost['gname'] = $groupdetail['gname'];
-		unset($cleanPost['pass2']);
-		if (!$this->HackathonModel->updatePassword($cleanPost)) {
+		if(!$groupdetail){  
+			$this->session->set_flashdata('sukses', 'Token tidak valid atau kadaluarsa');  
+			redirect(site_url('login'), 'refresh');   
+		}    
+		$post = $this->input->post(NULL, TRUE);          
+		$cleanPost = $this->security->xss_clean($post);          
+		$hashed = md5($cleanPost['pass']."bios2019mantap");          
+		$cleanPost['pass'] = $hashed;  
+		$cleanPost['gname'] = $groupdetail['gname'];  
+		unset($cleanPost['pass2']);          
+		if(!$this->HackathonModel->updatePassword($cleanPost)){  
 			echo json_encode(0);
 		} else {
 			echo json_encode(1);

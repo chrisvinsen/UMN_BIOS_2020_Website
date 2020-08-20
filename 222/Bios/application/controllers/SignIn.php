@@ -9,7 +9,7 @@ class SignIn extends CI_Controller {
 
 	public function index()
 	{
-		// if (isset($_SESSION['gname'])) {
+		// if (isset($_SESSION['user_data'])) {
 		// 	redirect(base_url().'transaction/view_aju',$data);
 		// }
 		$data['script'] = $this->load->view('include/Script', NULL, TRUE);

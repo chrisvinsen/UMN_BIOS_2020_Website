@@ -183,7 +183,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     alert("Success");
                     window.location.assign("<?php echo base_url(); ?>Admin");
                 }
-                // alert(ret.firstName[0]);
             },
             error: function(ret) {
             },

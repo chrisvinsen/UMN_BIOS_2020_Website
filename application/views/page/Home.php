@@ -38,8 +38,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <p>Hackathon merupakan ajang kompetisi software development yang di laksanakan dalam durasi 24 jam.</p>
                     </div>
                     <div class="container" id="container2">
-                        <a href="<?php echo base_url() ?>signin"><button class=" btn btn-login">Login</button></a>
-                        <a href="<?php echo base_url() ?>SignUp"><button class=" btn btn-signUp">Sign Up </button></a>
                         <a href="<?php echo base_url() ?>signin" class="btn btn-login" style="color: white;">SIGN IN</a>
                         <a href="<?php echo base_url() ?>signup" class="btn btn-signUp" style="color: white;">SIGN UP</a>
                     </div>
