@@ -27,8 +27,8 @@ class UpdatePassword extends CI_Controller
 		$config = [
 			'protocol'	=>	'smtp',
 			'smtp_host'	=>	'ssl://smtp.googlemail.com',
-			'smtp_user'	=>	'bios@umn.ac.id',
-			'smtp_pass'	=>	'biosHMIF',
+			'smtp_user'	=>	'gelartiker.noreply@gmail.com',
+			'smtp_pass'	=>	'TestTest',
 			'smtp_port'	=>	465,
 			'mailtype'	=>	'html',
 			'charset'	=>	'utf-8',
@@ -36,7 +36,7 @@ class UpdatePassword extends CI_Controller
 		];
 		$this->load->library('email', $config);
 
-		$this->email->from('bios@umn.ac.id', 'BIOS UMN');
+		$this->email->from('gelartiker.noreply@gmail.com', 'BIOS UMN');
 		$this->email->to($email);
 		$this->email->subject($title);
 		$this->email->message($m);
@@ -119,17 +119,17 @@ class UpdatePassword extends CI_Controller
 		$token = $this->uri->segment(4);;
 		$cleanToken = $this->security->xss_clean($token);
 		$groupdetail = $this->HackathonModel->isTokenValid($cleanToken); //either false or array();    
-		if(!$groupdetail){  
-			$this->session->set_flashdata('sukses', 'Token tidak valid atau kadaluarsa');  
-			redirect(site_url('login'), 'refresh');   
-		}    
-		$post = $this->input->post(NULL, TRUE);          
-		$cleanPost = $this->security->xss_clean($post);          
-		$hashed = md5($cleanPost['pass']."bios2019mantap");          
-		$cleanPost['pass'] = $hashed;  
-		$cleanPost['gname'] = $groupdetail['gname'];  
-		unset($cleanPost['pass2']);          
-		if(!$this->HackathonModel->updatePassword($cleanPost)){  
+		if (!$groupdetail) {
+			$this->session->set_flashdata('sukses', 'Token tidak valid atau kadaluarsa');
+			redirect(site_url('login'), 'refresh');
+		}
+		$post = $this->input->post(NULL, TRUE);
+		$cleanPost = $this->security->xss_clean($post);
+		$hashed = md5($cleanPost['pass'] . "bios2019mantap");
+		$cleanPost['pass'] = $hashed;
+		$cleanPost['gname'] = $groupdetail['gname'];
+		unset($cleanPost['pass2']);
+		if (!$this->HackathonModel->updatePassword($cleanPost)) {
 			echo json_encode(0);
 		} else {
 			echo json_encode(1);

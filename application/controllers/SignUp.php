@@ -14,7 +14,7 @@ class SignUp extends CI_Controller
 	{
 		$data['script'] = $this->load->view('include/Script', NULL, TRUE);
 
-		
+
 		$data['script'] = $this->load->view('include/Script', NULL, TRUE);
 		$data['style'] = $this->load->view('include/Style', NULL, TRUE);
 		$data['footer'] = $this->load->view('include/Footer', NULL, TRUE);
@@ -29,8 +29,8 @@ class SignUp extends CI_Controller
 		$config['protocol'] = 'smtp';
 		$config['smtp_host'] = 'ssl://smtp.googlemail.com';
 		$config['smtp_port'] = 465;
-		$config['smtp_user'] = 'bios@umn.ac.id';
-		$config['smtp_pass'] = 'biosHMIF';
+		$config['smtp_user'] = 'gelartiker.noreply@gmail.com';
+		$config['smtp_pass'] = 'TestTest';
 
 		$config['mailtype'] = 'html';
 		$config['charset'] = 'iso-8859-1';
@@ -39,7 +39,7 @@ class SignUp extends CI_Controller
 		$this->load->library('email', $config);
 		$this->email->set_newline("\r\n");
 
-		$this->email->from('bios@umn.ac.id', 'BIOS UMN');
+		$this->email->from('gelartiker.noreply@gmail.com', 'BIOS UMN');
 		$this->email->to($email);
 		$this->email->subject('Konfirmasi Email');
 
@@ -78,7 +78,7 @@ class SignUp extends CI_Controller
 				$person[$i]['phoneNumber'] = $phoneNumber[$i];
 				$person[$i]['email'] = $email[$i];
 				$person[$i]['idLine'] = $idLine[$i];
-			} 
+			}
 		}
 
 		// person data
