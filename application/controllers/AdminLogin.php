@@ -26,6 +26,7 @@ class AdminLogin extends CI_Controller
 			$this->session->set_userdata('mantapBiosAdmin', "ed7ede39aec516550fa6e63d1b7c1d1b");
 			// var_dump(md5($pass."2019"));
 			echo json_encode(1);
+ 			redirect(base_url() . "Admin");
 		} else {
 			echo json_encode(0);
 		}
