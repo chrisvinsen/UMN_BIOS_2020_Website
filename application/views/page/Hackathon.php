@@ -44,7 +44,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					</div>
 					<br>
 					<hr style="margin:0px;width:100%;border-color:#ffffff;background-color:#ffffff">
-<<<<<<< Updated upstream
 					<br style="line-height:2px">
 					<div class="">
 						<img class="mr-3" src="<?php echo base_url('/assets/img/Hackathon/icon-date.png') ?>">
@@ -54,24 +53,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						<br>
 						<img class="mr-3" src="<?php echo base_url('/assets/img/Hackathon/icon-time.png') ?>">
 						<span>10:00 WIB</span>
-=======
-					<div class="col-md-5 col-xs-12 div-seminar">
-						<ul class="list-unstyled">
-							<li class="li-footer ftco-animate fadeInUp ftco-animated">
-								<div style="display:flex">
-									<p class="li-footer">
-										<img class="icon-footer mr-3" src="<?php echo base_url('/assets/img/Hackathon/icon-date.png'); ?>">
-										09 April 2020
-									</p>
-								</div>
-
-							</li>
-							<li class="ftco-animate fadeInUp ftco-animated">
-								<img class="icon-footer mr-3" src="<?php echo base_url('/assets/img/Hackathon/icon-time.png'); ?>">
-								24 Hours
-							</li>
-						</ul>
->>>>>>> Stashed changes
 					</div>
 				</div>
 			</div>

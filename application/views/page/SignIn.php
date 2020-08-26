@@ -46,7 +46,7 @@
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input checkbox_check" id="remember_me">
                                 <label class="custom-control-label" for="remember_me"><small> Remember Me </small></label>
-                                <small class="float-right"><a href="javascript:void(0)"> Forget your password? </a></small>
+                                <small class="float-right"><a href="<?php echo base_url();?>UpdatePassword"> Forget your password? </a></small>
                             </div>
                             <span id="error_message" class="text-danger" style="font-weight: 700"></span>
                         </div>                        
