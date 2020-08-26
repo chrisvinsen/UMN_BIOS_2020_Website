@@ -1,30 +1,32 @@
 <?php
-    defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-    if (isset($_SESSION['user_data'])) {
-        echo ("<script>location.href='GroupName'</script>");
-    } 
-    if(isset($_SESSION['activated'])) {
-        echo ("<script>alert('Team account has been successfully activated, please log in now.')</script>");
-    }
+if (isset($_SESSION['user_data'])) {
+    echo ("<script>location.href='GroupName'</script>");
+}
+if (isset($_SESSION['activated'])) {
+    echo ("<script>alert('Team account has been successfully activated, please log in now.')</script>");
+}
 
 ?>
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>BIOS</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <?php
-        echo $style;
+    echo $style;
     ?>
 </head>
+
 <body>
     <?php
-        echo $header;
-    ?> 
-    
+    echo $header;
+    ?>
+
     <section class="ftco-intro py-5" style="background-image: url(<?php echo base_url(); ?>assets/img/registration-img.png);">
         <div class="overlay"></div>
         <div class="container" style="margin-top:100px">
@@ -46,27 +48,27 @@
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input checkbox_check" id="remember_me">
                                 <label class="custom-control-label" for="remember_me"><small> Remember Me </small></label>
-                                <small class="float-right"><a href="<?php echo base_url();?>UpdatePassword"> Forget your password? </a></small>
+                                <small class="float-right"><a href="<?= base_url('UpdatePassword') ?>"> Forget your password? </a></small>
                             </div>
                             <span id="error_message" class="text-danger" style="font-weight: 700"></span>
-                        </div>                        
+                        </div>
                         <div class="text-center mt-4">
                             <button type="submit" class="btn px-5 py-2 mx-auto d-block custom-btn-signin text-white">LOGIN</button>
-                            <small>Don't have an account yet? <a class="font-weight-bold" href="<?php echo base_url()?>signup"> Sign Up </a></small>
+                            <small>Don't have an account yet? <a class="font-weight-bold" href="<?php echo base_url() ?>signup"> Sign Up </a></small>
                         </div>
                     </form>
                 </div>
-            </div>   
+            </div>
         </div>
     </section>
     <?php
-        echo $footer;
+    echo $footer;
     ?>
 </body>
 
 <?php
-    echo $loader;
-    echo $script;
+echo $loader;
+echo $script;
 ?>
 
 <script>
@@ -111,4 +113,5 @@
         }
     })
 </script>
+
 </html>
