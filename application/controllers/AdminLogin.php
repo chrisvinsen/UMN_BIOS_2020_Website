@@ -24,8 +24,11 @@ class AdminLogin extends CI_Controller
 		$pass = md5($pass . "bios2020");
 		if ($uname == "Bios2020" && $pass == "ed7ede39aec516550fa6e63d1b7c1d1b") {
 			$this->session->set_userdata('mantapBiosAdmin', "ed7ede39aec516550fa6e63d1b7c1d1b");
-			// var_dump(md5($pass."2019"));
-			echo json_encode(1);
+			$data['group'] = $this->HackathonModel->select_all();
+			$data['script'] = $this->load->view('include/Script', NULL, TRUE);
+			$data['loader'] = $this->load->view('include/Loader', NULL, TRUE);
+			$data['style'] = $this->load->view('include/Style', NULL, TRUE);
+			$this->load->view('page/Admin.php', $data);
 		} else {
 			echo json_encode(0);
 		}

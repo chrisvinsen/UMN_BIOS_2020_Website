@@ -46,7 +46,7 @@ class HackathonModel extends CI_Model
 		$sql = "SELECT groupId, GROUP_CONCAT(personId) personId FROM `group` group by 1";
 		$grouprelation =  $this->db->query($sql)->result_array();
 		$i = 0;
-		$group = "";
+		$group = array();
 		foreach ($grouprelation as $key) {
 			$data['id'] = $key['groupId'];
 			$group[$i]['groupdetail'] = $this->select_data($data, 'groupdetail');
