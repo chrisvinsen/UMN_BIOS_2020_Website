@@ -92,6 +92,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <ul class="nav navbar-nav navbar-right" style="padding:0 5%">
                 <li><a href="<?php echo base_url(); ?>Admin/uploadView">Upload</a></li>  
                 <li><a href="<?php echo base_url(); ?>Admin">Group List</a></li>  
+                <li><a href="<?php echo base_url(); ?>AdminLogin/logout">Logout</a></li>  
             </ul>
         </div>
     </nav>
@@ -135,18 +136,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             echo "</td>";
                             echo "<td style='background-color:".checkSt($row['groupdetail']['statusCard'])."'>" ;  
                             foreach ($row['persondetail'] as $person) {
-                                echo "<a href='".base_url()."mantapBios1Secret/resources/card/".$person['fileCard']."' download>". $person['fileCard'] . "</a><br>";
+                                echo "<a href='".base_url()."assets/resources/card/".$person['fileCard']."' download>". $person['fileCard'] . "</a><br>";
                             }
                                 if($row['groupdetail']['statusCard']==1)
                                     echo '<br><button class = "btn btn-default" style="color:dodgerblue" onclick="sendEmail(\''.$row['persondetail'][0]['email'].'\', \''.$row['groupdetail']['id'].'\',\'card\')">Send Email</button>';
                             echo "</td>";
                             echo "<td style='background-color:".checkSt($row['groupdetail']['statusPembayaran'])."'>" ;  
-                                echo "<a href='".base_url()."mantapBios1Secret/resources/pembayaran/".$row['groupdetail']['filePembayaran']."' download>". $row['groupdetail']['filePembayaran'] . "</a>";
+                                echo "<a href='".base_url()."assets/resources/pembayaran/".$row['groupdetail']['filePembayaran']."' download>". $row['groupdetail']['filePembayaran'] . "</a>";
                                 if($row['groupdetail']['statusPembayaran']==1)
                                     echo '<br><br><button class = "btn btn-default" style="color:dodgerblue" onclick="sendEmail(\''.$row['persondetail'][0]['email'].'\', \''.$row['groupdetail']['id'].'\',\'pembayaran\')">Send Email</button>';
                             echo "</td>";
                             echo "<td style='background-color:".checkSt($row['groupdetail']['statusProposal'])."'>" ;  
-                                echo "<a href='".base_url()."mantapBios1Secret/resources/proposal/".$row['groupdetail']['fileProposal']."' download>". $row['groupdetail']['fileProposal'] . "</a>";
+                                echo "<a href='".base_url()."assets/resources/proposal/".$row['groupdetail']['fileProposal']."' download>". $row['groupdetail']['fileProposal'] . "</a>";
                                 if($row['groupdetail']['statusProposal']==1)
                                     echo '<br><br><button class = "btn btn-default" style="color:dodgerblue" onclick="sendEmail(\''.$row['persondetail'][0]['email'].'\', \''.$row['groupdetail']['id'].'\',\'proposal\')">Send Email</button>';
                             echo "</td>";

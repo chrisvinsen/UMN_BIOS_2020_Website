@@ -22,15 +22,20 @@ class AdminLogin extends CI_Controller
 		$uname = trim($this->input->post('name'));
 		$pass = trim($this->input->post('pass'));
 		$pass = md5($pass . "bios2020");
-		if ($uname == "Bios2020" && $pass == "ed7ede39aec516550fa6e63d1b7c1d1b") {
-			$this->session->set_userdata('mantapBiosAdmin', "ed7ede39aec516550fa6e63d1b7c1d1b");
+		if ($uname == "Bios2020" && $pass == "997a8ec108acea9fe390942ad76d6c55") {
+		$this->session->set_userdata('mantapBiosAdmin', "997a8ec108acea9fe390942ad76d6c55");
 			$data['group'] = $this->HackathonModel->select_all();
 			$data['script'] = $this->load->view('include/Script', NULL, TRUE);
 			$data['loader'] = $this->load->view('include/Loader', NULL, TRUE);
 			$data['style'] = $this->load->view('include/Style', NULL, TRUE);
 			$this->load->view('page/Admin.php', $data);
 		} else {
-			echo json_encode(0);
+			redirect('admin');
 		}
 	}
+
+	public function logout(){
+		$this->session->unset_userdata('mantapBiosAdmin');
+		redirect('Home');
+	}		
 }
