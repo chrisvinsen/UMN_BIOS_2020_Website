@@ -12,6 +12,185 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<?php
 	echo $style;
 	?>
+
+	<style>
+		
+
+/* timeline */
+
+.timeline__section{
+    height: 100vh;
+    width: 100%;
+}
+
+.headingx-timeline{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#ab206c;
+    color: white;
+
+}
+
+
+.timelinex{
+    width:80%;
+    height:auto;
+    max-width: 800px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.timelinex ul{
+	list-style:none;
+	padding: 30px;
+}
+
+.timelinex ul li{
+    background-color:#301b40;
+    color: white;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+.timelinex ul li:last-child{
+    margin-bottom:0;
+}
+
+.timelinex-content h1{
+    font-weight:500;
+    font-size:25px;
+    line-height:30px;
+    margin-bottom:10px;
+}
+
+.timelinex-content p{
+    font-weight:300 ;
+    padding:  50px 30px;
+    text-align: center;
+}
+
+.timelinex-content .date{
+    font-size:12px;
+    font-weight:300;
+    padding: 10px 30px;
+    letter-spacing:2px;
+    background-color:#583870;
+    text-align: center;
+}
+
+.timeline-content .date{
+    color: white;
+}
+
+@media only screen and (min-width:768px){
+
+	.date{
+		color:white;
+	}
+
+    .timelinex:before{
+        content: "";
+        position: absolute;
+        top:0;
+        left:49%;
+        transform : translateX(320%);
+        width:2px;
+        height:100%;
+        background-color:#301b40;
+    }
+
+    .timelinex ul li{
+        width:50%;
+        position: relative;
+        margin-bottom: 50px;
+    }
+
+    .timelinex ul li:nth-child(odd){
+        float: left;
+        clear:right;
+        transform: translateX(-30px);
+        border-radius:0px;
+    }
+    .timelinex ul li:nth-child(even){
+        float: right;
+        clear:left;
+        transform: translateX(30px);
+        border-radius:0px;
+    }
+
+    .timelinex ul li::before{
+        content:"";
+        position:absolute;
+        height:20px;
+        width: 20px;
+        border-radius:50%;
+        background-color: #301b40;
+        top:0px;
+    }
+
+    .timelinex ul li:nth-child(odd)::before{
+        transform: translate(50%,-50%);
+        right:-30px;
+    }
+    .timelinex ul li:nth-child(even)::before{
+        transform: translate(-50%,-50%);
+        left:-30px;    
+    }
+
+    .timelinex ul li:hover::before{
+        background-color:rgb(152, 240, 52);
+        transition: 0.5s ease;
+    }
+
+
+    .timelinex-content p{
+        text-align: left;
+    }
+
+    .timelinex-content .date{
+        text-align: left;
+    }
+    
+
+    
+}
+
+
+@keyframes moveInRight{
+    0%{
+    
+    }
+}
+
+.card-header .fa {
+  transition: .3s transform ease-in-out;
+}
+.card-header .collapsed .fa {
+  transform: rotate(90deg);
+}
+
+.box{
+	width:50%;
+}
+
+@media screen and (max-width:350px){
+	.box{
+		margin: 10px;
+		width: 100%;
+	}
+}
+.check-benefits{
+    font-weight: 300;
+}
+.date{
+	color:white;
+}
+
+
+
+	</style>
 </head>
 
 <body>
@@ -45,14 +224,22 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<br>
 					<hr style="margin:0px;width:100%;border-color:#ffffff;background-color:#ffffff">
 					<br style="line-height:2px">
-					<div class="">
-						<img class="mr-3" src="<?php echo base_url('/assets/img/Hackathon/icon-date.png') ?>">
-						<span>09 April 2020</span>
-						<img class="mr-3" src="<?php echo base_url('/assets/img/Hackathon/icon-maps.png') ?>" style="padding-left:5em">
-						<span>Zoom</span>
-						<br>
-						<img class="mr-3" src="<?php echo base_url('/assets/img/Hackathon/icon-time.png') ?>">
-						<span>10:00 WIB</span>
+					<div class="" style="display:flex; flex-wrap: wrap;">
+						<div class="box">
+							<img class="mr-3" src="<?php echo base_url('/assets/img/Hackathon/icon-date.png') ?>">
+							<span>09 April 2020</span>
+						</div>
+						
+						<div class="box">
+							<img class="mr-3" src="<?php echo base_url('/assets/img/Hackathon/icon-maps.png') ?>">
+							<span>Zoom</span>
+						</div>
+						
+						<div class="box">
+							<img class="mr-3" src="<?php echo base_url('/assets/img/Hackathon/icon-time.png') ?>">
+							<span>10:00 WIB</span>
+						</div>
+						
 					</div>
 				</div>
 			</div>
@@ -60,38 +247,50 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<div class="col-md-6 pl-md-5 ftco-animate" style="padding: 20px">
 					<h2><a href="#" style="font-weight:bold">Be Our Participant</a></h2>
 					<hr style="margin:0px;width:55%;border-color:#ffffff;background-color:#ffffff">
-					<p class="fa fa-check-square color-2">
+					<!-- <p class="fa fa-check-square">
 						<span style="color:white;"><strong>CHANCE</strong> go to Japan with Grid</span>
 					</p><br>
-					<p class="fa fa-check-square color-2">
+					<p class="fa fa-check-square">
 						<span style="color:white;">
 							<strong>MENTORING</strong> from experts
 						</span>
 					</p><br>
-					<p class="fa fa-check-square color-2">
+					<p class="fa fa-check-square">
 						<span style="color:white;">
 							<strong>CHANCE</strong> to get incubation program from RII with total additional prize Rp 15.000.000!
 						</span>
 					</p><br>
-					<p class="fa fa-check-square color-2">
+					<p class="fa fa-check-square">
 						<span style="color:white;">
 							<strong>FREE</strong> access to MakeAI courses for top 10 finalists
 						</span>
 					</p><br>
-					<p class="fa fa-check-square color-2">
+					<p class="fa fa-check-square">
 						<span style="color:white;">
 							<strong>Making</strong> new connections with other participants, mentors, and judges
 						</span>
-					</p>
-
+					</p> -->
+					<div class="check">
+						 
+							<p class="check-benefits"><span><i class="fas fa-check-square"></i></span> <strong>CHANCE</strong> go to Japan with Grid</p>
+						
+						
+							<p class="check-benefits"><span><i class="fas fa-check-square"></i></span> <strong>MENTORING</strong> from experts</p>
+					
+						
+							<p class="check-benefits"><span><i class="fas fa-check-square"></i></span> <strong>CHANCE</strong> to get incubation program from RII with total additional prize Rp 15.000.000!</p>
+							<p class="check-benefits"><span><i class="fas fa-check-square"></i></span> <strong>FREE</strong> access to MakeAI courses for top 10 finalists</p>
+							<p class="check-benefits"><span><i class="fas fa-check-square"></i></span> <strong>Making</strong> new connections with other participants, mentors, and judges</p>
+					
+					</div>
 
 				</div>
 				<div class="col-md-6 pl-md-5 ftco-animate">
 					<img class="col-12 col-sm-12" src="<?php echo base_url('/assets/img/Hackathon/Asset-2.png'); ?>">
 				</div>
-				<div class="row d-flex align-items-center" style="padding: 20px; background:url(<?php echo base_url('assets/img/Hackathon/bg3.png'); ?>) no-repeat ">
+				<div class="row d-flex align-items-center" style="padding: 20px;">
 					<div class="col-md-2 ftco-animate">
-						<img class="col-12 col-sm-12" src="<?php echo base_url('assets/img/shadow.png'); ?>">
+						<img class="col-12 col-sm-12 shadow_img" src="<?php echo base_url('assets/img/shadow.png'); ?>">
 					</div>
 					<div class="col-md-8 ftco-animate">
 						<h2 style=" text-align:center;"><a href="#" style="font-weight:bold">Prize Pool</a></h2>
@@ -109,7 +308,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						</div>
 						<h2 style=" text-align:center;"><a href="#" style="font-weight:bold">Facilities</a></h2>
 						<hr style="width:20%;border-color:#FFF;background-color:#fff;height:2px;">
-						<div class="col-md-12 d-flex" style=" border-radius: 25px; padding: 10px;">
+						<div class="col-md-12 d-flex" style=" border-radius: 25px; padding: 10px; display:none">
 							<div class="col-md-4" style="text-align:center">
 								<p>24 Hours Wifi</p>
 							</div>
@@ -122,434 +321,171 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						</div>
 					</div>
 					<div class="col-md-2 ftco-animate">
-						<img class="col-12 col-sm-12" src="<?php echo base_url('assets/img/shadow.png'); ?>">
+						<img class="col-12 col-sm-12 shadow_img" src="<?php echo base_url('assets/img/shadow.png'); ?>">
 					</div>
 				</div>
 			</div>
 			<div class="row d-flex align-items-center">
-				<div class="col-md-6 ftco-animate bg-blue-acara" style="background-color: #725b71">
-					<div style="text-align: left">
-						<img class="col-5" src="<?php echo base_url('/assets/resources/home/logo-hmif.png'); ?>" style="background-color: white; border-radius: 50px; padding: 10px; padding-left: 30px;  padding-right: 30px; margin-top: 20px">
-					</div>
-					<p class="btn-disabled-judul-acara px-4 py-2" style="width: 125px; color: #725b71">Hackathon</p>
-					<h2><a href="#" style="font-weight:bold"><strong>BIOS Hackathon</strong><br><i>"Improving The Society"</i></a></h2>
-
-					<div class="col-md-3" style="font-size: 12px; background-color: #f17caa ; padding: 8px; margin: 10px; margin-left: 0px; text-align: center; float: left">
-						<strong>Powered By</strong>
-					</div>
-					<div class="col-md-6 d-flex" style="background-color: white; border-radius: 15px; padding: 10px;">
-						<div class="col-4" style="float: left;">
-							<img src="<?php echo base_url('/assets/resources/hackathon/sponsor-1.png') ?>"" class=" col-12" style="margin: 0px; padding: 0px">
-						</div>
-						<div class="col-md-8" style="float: left; margin-top: 5px; padding: 0px">
-							<img src="<?php echo base_url('/assets/resources/hackathon/sponsor-2.png') ?>"" class=" col-12" style="margin: 0px; padding: 0px">
-						</div>
-					</div>
-					<div style="border-bottom: 5px solid white; margin-top: 20px;  margin-bottom: 20px">
-
-					</div>
-					<div class="col-md-5 col-xs-12 div-seminar">
-						<ul class="list-unstyled">
-							<li class="li-footer ftco-animate fadeInUp ftco-animated">
-								<img class="icon-footer mr-3" src="<?php echo base_url(); ?>assets/resources/seminar/icon-date.png')?>"" style=" float: left">
-								<p class="li-footer">
-									29/08/2019<br>
-									30/08/2019
-								</p>
-							</li>
-							<li class="ftco-animate fadeInUp ftco-animated">
-								<img class="icon-footer mr-3" src="<?php echo base_url(); ?>assets/resources/seminar/icon-time.png')?>"">
-								24 Hours
-							</li>
-						</ul>
-					</div>
-					<div class=" col-md-7 col-xs-12 div-seminar">
-								<ul class="list-unstyled">
-									<li>
-										<img class="icon-footer-address mr-3" src="<?php echo base_url(); ?>assets/resources/seminar/icon-maps.png')?>"">
-								<p>
-									Function Hall<br>
-									Universitas Multimedia Nusantara
-								</p>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class=" col-md-6 pl-md-5 ftco-animate" style=" z-index: 2 !important;">
-										<div class="owl-carousel testimony-slider m-lg-min-70">
-											<div>
-												<img src="<?php echo base_url(); ?>assets/resources/hackathon/pict-1.jpg" alt="Image placeholder">
-											</div>
-											<div>
-												<img src="<?php echo base_url(); ?>assets/resources/hackathon/pict-2.jpg" alt="Image placeholder">
-											</div>
-											<div>
-												<img src="<?php echo base_url(); ?>assets/resources/hackathon/pict-3.jpg" alt="Image placeholder">
-											</div>
-										</div>
-					</div>
-				</div>
-
-				<div class="row d-flex align-items-center">
-					<div class="col-md-6 ftco-animate m-tg-min-90">
-						<h2 style="border-bottom: 5px solid white; margin-bottom: 20px"><a href="#" style="font-weight:bold">General Guidelines</a></h2>
-
-						<div class="col-md-12 col-xs-12 div-seminar">
-							<div class="container-vertical-benefit col-12">
-								<div class="numberCircle mr-3">1</div>
-								<p class="vertical-center" style="margin-left:50px">Peserta merupakan mahasiswa aktif perguruan tinggi se-Indonesia.</p>
-							</div><br>
-							<div class="container-vertical-benefit col-12">
-								<div class="numberCircle mr-3">2</div>
-								<p class="vertical-center" style="margin-left:50px">Setiap tim terdiri dari 3-4 orang.</p>
-							</div><br>
-							<div class="container-vertical-benefit col-12">
-								<div class="numberCircle mr-3">3</div>
-								<p class="vertical-center" style="margin-left:50px">Biaya pendaftaran setiap tim adalah <strong>Rp 150.000,00</strong> (Seratus Lima Puluh Ribu Rupiah).</p>
-							</div><br>
-							<div class="container-vertical-benefit col-12">
-								<div class="numberCircle mr-3">4</div>
-								<p class="vertical-center" style="margin-left:50px">Batas terakhir pendaftaran <strong>15 Agustus 2019</strong>.</p>
-							</div><br>
-							<div class="container-vertical-benefit col-12">
-								<div class="numberCircle mr-3">5</div>
-								<p class="vertical-center" style="margin-left:50px">Peserta diwajibkan untuk mengumpulkan proposal ide aplikasi untuk diseleksi.</p>
-							</div><br>
-							<div class="container-vertical-benefit col-12 m-lx-plus-30">
-								<div class="numberCircle mr-3">6</div>
-								<p class="vertical-center" style="margin-left:50px">Tim yang lolos tahap seleksi, diwajibkan untuk mempelajari dan menggunakan <strong>framework AI ReNom</strong> pada prototipe yang dibuat. (<a href="http://www.renom.jp/" style="color: white" target="_blank"><strong>www.renom.jp</strong></a>)</p>
-							</div><br>
-							<div class="container-vertical-benefit col-12 m-lx-plus-30">
-								<div class="numberCircle mr-3">7</div>
-								<p class="vertical-center" style="margin-left:50px; margin-top:10px">Pembayaran biaya registrasi dapat ditransfer ke rek. <strong>BCA 8831180790 a/n Joy Amadea</strong>, serta mengupload foto bukti transfer yang terdapat pada halaman profil grup.</p>
-							</div><br>
-
-							<div class="col-md-6 col-xs-12 div-seminar center-text" style="margin-top: 20px">
-								<p><a href="<?php echo base_url() . 'assets/resources/upload/' . $upload['rulebook']; ?>" class="btn btn-primary px-4 py-2" style="font-size: 12px; width: 200px" target="_blank" download><strong>DOWNLOAD<br>RULEBOOK</strong></a></p>
+			<h2 style=" text-align:center; width:100%;padding-top:30px;"><a href="#" style="font-weight:bold; border-bottom: solid 4px white ;">Our Timeline</a></h2>
+				<div class="timelinex" style="width:100%; padding:30px;">
+					<ul style="padding:30px;">
+						<li>
+							<div class="timelinex-content">
+								<p>Pendaftaran Time Peserta</p>
+								<h3 class="date">20th may, 2020 - 30th may, 2020  </h3>
+							
 							</div>
-							<div class="col-md-6 col-xs-12 div-seminar center-text m-tg-plus-20">
-								<p><a href="<?php echo base_url() . 'assets/resources/upload/' . $upload['proposal']; ?>" class="btn btn-primary px-4 py-2" style="font-size: 12px; width: 200px" target="_blank" download><strong>DOWNLOAD<br>FORMAT PROPOSAL</strong></a></p>
+						</li>
+						<li>
+							<div class="timelinex-content">
+								<p>Pendaftaran 2 Peserta</p>
+								<h3 class="date">20th may, 2020 - 30th may, 2020  </h3>
+							
 							</div>
-						</div>
-					</div>
-					<div class="col-md-6 ftco-animate bg-blue-acara" style="background-color: #725b71">
-						<h2 style="border-bottom: 5px solid white; margin-bottom: 20px; text-align: right;"><a href="#" style="font-weight:bold">FAQ</a></h2>
-						<div class="col-md-12 col-xs-12 div-seminar">
-							<!--Accordion wrapper-->
-							<div class="accordion md-accordion" id="accordionEx1" role="tablist" aria-multiselectable="true">
-								<div class="card">
-									<div class="card-header" role="tab" id="headingTwo1">
-										<a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseTwo1" aria-expanded="false" aria-controls="collapseTwo1">
-											<h5 class="card-title-accordion mb-0">
-												Apa itu Hackathon?
-											</h5>
-										</a>
-									</div>
-									<div id="collapseTwo1" class="collapse" role="tabpanel" aria-labelledby="headingTwo1" data-parent="#accordionEx1">
-										<div class="card-body">
-											Hackathon merupakan perlombaan dalam membuat prototipe aplikasi yang dapat memecahkan permasalahan yang diberikan, yang berlangsung selama 24 jam.
-										</div>
-									</div>
-								</div>
-								<div class="card">
-									<div class="card-header" role="tab" id="headingTwo1">
-										<a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">
-											<h5 class="card-title-accordion mb-0">
-												Apakah peserta diwajibkan untuk menginap saat Hackathon berlangsung?
-											</h5>
-										</a>
-									</div>
-									<div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2" data-parent="#accordionEx1">
-										<div class="card-body">
-											Ya. Peserta dilarang untuk meninggalkan area Hackathon selama keberlangsungan lomba.
-										</div>
-									</div>
-								</div>
-								<div class="card">
-									<div class="card-header" role="tab" id="headingTwo1">
-										<a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseTwo3" aria-expanded="false" aria-controls="collapseTwo3">
-											<h5 class="card-title-accordion mb-0">
-												Apakah panitia menyediakan transportasi bagi peserta?
-											</h5>
-										</a>
-									</div>
-									<div id="collapseTwo3" class="collapse" role="tabpanel" aria-labelledby="headingTwo2" data-parent="#accordionEx1">
-										<div class="card-body">
-											Tidak. Panitia tidak menyediakan transportasi.
-										</div>
-									</div>
-								</div>
-								<div class="card">
-									<div class="card-header" role="tab" id="headingTwo1">
-										<a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseTwo4" aria-expanded="false" aria-controls="collapseTwo4">
-											<h5 class="card-title-accordion mb-0">
-												Perlengkapan apa saja yang perlu dibawa peserta saat Hackathon berlangsung?
-											</h5>
-										</a>
-									</div>
-									<div id="collapseTwo4" class="collapse" role="tabpanel" aria-labelledby="headingTwo2" data-parent="#accordionEx1">
-										<div class="card-body">
-											Laptop, charger laptop, dan barang-barang kebutuhan pribadi lainnya. Peserta dilarang untuk membawa obat-obat terlarang dan benda-benda tajam yang tidak berhubungan dengan lomba.
-										</div>
-									</div>
-								</div>
-								<div class="card">
-									<div class="card-header" role="tab" id="headingTwo1">
-										<a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseTwo5" aria-expanded="false" aria-controls="collapseTwo5">
-											<h5 class="card-title-accordion mb-0">
-												Apa saja kriteria penilaian lomba?
-											</h5>
-										</a>
-									</div>
-									<div id="collapseTwo5" class="collapse" role="tabpanel" aria-labelledby="headingTwo2" data-parent="#accordionEx1">
-										<div class="card-body">
-											Kriteria penilaiannya teknis(30%), bisnis(30%), originalitas ide(40%). Untuk informasi selengkapnya dapat dilihat pada rulebook.
-										</div>
-									</div>
-								</div>
-								<div class="card">
-									<div class="card-header" role="tab" id="headingTwo1">
-										<a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseTwo6" aria-expanded="false" aria-controls="collapseTwo6">
-											<h5 class="card-title-accordion mb-0">
-												Apakah peserta yang lolos seleksi diwajibkan menggunakan framework AI ReNom saat final nanti?
-											</h5>
-										</a>
-									</div>
-									<div id="collapseTwo6" class="collapse" role="tabpanel" aria-labelledby="headingTwo2" data-parent="#accordionEx1">
-										<div class="card-body">
-											Ya. Untuk framework artificial intelligencenya wajib menggunakan ReNom. Framework lainnya untuk mendukung pembuatan aplikasi berbasis web, mobile, ataupun desktop dibebaskan. Dokumentasi ReNom dapat diakses melalui <a href="http://www.renom.jp/" target="_blank" style="color: #725b71"><strong>www.renom.jp</strong></a>.
-										</div>
-									</div>
-								</div>
-								<div class="card">
-									<div class="card-header" role="tab" id="headingTwo1">
-										<a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseTwo7" aria-expanded="false" aria-controls="collapseTwo7">
-											<h5 class="card-title-accordion mb-0">
-												Berapakah jumlah tim yang lolos tahap seleksi?
-											</h5>
-										</a>
-									</div>
-									<div id="collapseTwo7" class="collapse" role="tabpanel" aria-labelledby="headingTwo2" data-parent="#accordionEx1">
-										<div class="card-body">
-											Sebanyak 30 tim yang akan lolos ke tahap final.
-										</div>
-									</div>
-								</div>
-								<div class="card">
-									<div class="card-header" role="tab" id="headingTwo1">
-										<a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseTwo8" aria-expanded="false" aria-controls="collapseTwo8">
-											<h5 class="card-title-accordion mb-0">
-												Apakah hasil karya aplikasi yang sudah menang sebelumnya boleh dipertandingkan lagi dalam lomba ini?
-											</h5>
-										</a>
-									</div>
-									<div id="collapseTwo8" class="collapse" role="tabpanel" aria-labelledby="headingTwo2" data-parent="#accordionEx1">
-										<div class="card-body">
-											Tidak. Hasil karya aplikasi yang sudah menang sebelumnya tidak boleh dipertandingkan lagi.
-										</div>
-									</div>
-								</div>
-								<div class="card">
-									<div class="card-header" role="tab" id="headingTwo1">
-										<a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseTwo9" aria-expanded="false" aria-controls="collapseTwo9">
-											<h5 class="card-title-accordion mb-0">
-												Jika memenangkan perlombaan, apakah hak cipta prototipe aplikasi tetap menjadi hak milik pribadi?
-											</h5>
-										</a>
-									</div>
-									<div id="collapseTwo9" class="collapse" role="tabpanel" aria-labelledby="headingTwo2" data-parent="#accordionEx1">
-										<div class="card-body">
-											Tidak. Konsep, code, maupun prototipe aplikasi dapat dipakai secara keseluruhan oleh pihak Renom Infrastruktur Indonesia.
-										</div>
-									</div>
-								</div>
-								<div class="card">
-									<div class="card-header" role="tab" id="headingTwo1">
-										<a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseTwo10" aria-expanded="false" aria-controls="collapseTwo10">
-											<h5 class="card-title-accordion mb-0">
-												Jika sudah melakukan pembayaran, apakah tim saya akan mendapatkan email konfirmasi pembayaran?
-											</h5>
-										</a>
-									</div>
-									<div id="collapseTwo10" class="collapse" role="tabpanel" aria-labelledby="headingTwo2" data-parent="#accordionEx1">
-										<div class="card-body">
-											Ya. Email konfirmasi akan dikirimkan dalam 1 x 24 jam kepada email ketua masing-masing tim. Jika belum mendapatkan email konfirmasi dalam 1 x 24 jam, peserta dapat langsung menghubungi contact person yang tertera.
-										</div>
-									</div>
-								</div>
-
+						</li>
+						<li>
+							<div class="timelinex-content">
+								<p>Pendaftaran 3 Peserta</p>
+								<h3 class="date">20th may, 2020 - 30th may, 2020  </h3>
+							
 							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="row d-flex align-items-center">
-					<div class="col-md-12 ftco-animate bg-blue-acara bg-half-transparent">
-						<h1 class="col-md-12 center-text" style="color: white"><strong>Timeline</strong></h1>
-						<div class="timeline ">
-							<div class="containerTimeline left ">
-								<div class="content ">
-									<p style="margin-bottom: 10px; font-weight:bold; font-size: 1rem; color: black">Pendaftaran Tim Peserta</p>
-									<p class="px-4 py-2 col-md-7" style="margin-bottom: 0px !important; font-size: 12px; background: red !important; border: 1px solid red!important; text-align: center; border-radius: 25px">24 Juni 2019 - 15 Agustus 2019</p>
-								</div>
+						</li>
+						<li>
+							<div class="timelinex-content">
+								<p>Pendaftaran 4 Peserta</p>
+								<h3 class="date">20th may, 2020 - 30th may, 2020  </h3>
+							
 							</div>
-							<div class="containerTimeline right ">
-								<div class="content" style="text-align: right">
-									<p style="margin-bottom: 10px; font-weight:bold; font-size: 1rem; color: black">Batas Pengumpulan Proposal dan Pembayaran Biaya Pendaftaran</p>
-									<div align="right">
-										<p class="px-4 py-2 col-md-5" style="margin-bottom: 0px !important; font-size: 12px; background: red !important; border: 1px solid red!important; text-align: center; border-radius: 25px">15 Agustus 2019</p>
-									</div>
-								</div>
+						</li>
+						<li>
+							<div class="timelinex-content">
+								<p>Pendaftaran 5 Peserta</p>
+								<h3 class="date">20th may, 2020 - 30th may, 2020  </h3>
+							
 							</div>
-						</div>
-						<div class="timeline ">
-							<div class="containerTimeline left ">
-								<div class="content ">
-									<p style="margin-bottom: 10px; font-weight:bold; font-size: 1rem; color: black">Pengumuman Hasil Seleksi</p>
-									<p class="px-4 py-2 col-md-5" style="margin-bottom: 0px !important; font-size: 12px; background: red !important; border: 1px solid red!important; text-align: center; border-radius: 25px">22 Agustus 2019</p>
-								</div>
-							</div>
-							<div class="containerTimeline right ">
-								<div class="content" style="text-align: right">
-									<p style="margin-bottom: 10px; font-weight:bold; font-size: 1rem; color: black">Mentoring Framework Renom</p>
-									<div align="right">
-										<p class="px-4 py-2 col-md-5" style="margin-bottom: 0px !important; font-size: 12px; background: red !important; border: 1px solid red!important; text-align: center; border-radius: 25px">28 Agustus 2019</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="timeline ">
-							<div class="containerTimeline left ">
-								<div class="content ">
-									<p style="margin-bottom: 10px; font-weight:bold; font-size: 1rem; color: black">Final Hackathon</p>
-									<p class="px-4 py-2 col-md-6" style="margin-bottom: 0px !important; font-size: 12px; background: red !important; border: 1px solid red!important; text-align: center; border-radius: 25px">29 - 30 Agustus 2019</p>
-								</div>
-							</div>
-						</div>
-
-					</div>
-				</div>
-
-				<div class="row d-flex align-items-center">
-					<div class="col-md-6 pl-md-5 ftco-animate fadeInUp ftco-animated">
-						<h2 style="border-bottom: 5px solid white; margin-bottom: 20px; margin-top: 45px"><a href="#" style="font-weight:bold">Benefits</a></h2>
-
-
-
-						<div class="col-md-12 col-xs-12 div-seminar">
-							<div class="container-vertical-benefits col-12">
-								<div class="mr-3" style="text-align: left">
-									<img src="<?php echo base_url('assets/resources/hackathon/icon-benefit-0.png') ?>"" style=" height: 80px">
-								</div>
-								<p class="vertical-center" style="margin-left:100px"><strong>CHANCE</strong> go to Japan with GRID</p>
-							</div><br>
-							<div class="container-vertical-benefits col-12">
-								<p class="vertical-center" style="margin-right:100px"><strong>MENTORING</strong> from experts</p>
-								<div class="mr-3" style="text-align: right">
-									<img src="<?php echo base_url('assets/resources/hackathon/icon-benefit-1.png') ?>"" style=" height: 80px">
-								</div>
-							</div><br>
-							<div class="container-vertical-benefits col-12">
-								<div class="mr-3" style="text-align: left">
-									<img src="<?php echo base_url('assets/resources/hackathon/icon-benefit-3.png') ?>"" style=" height: 80px">
-								</div>
-								<p class="vertical-center" style="margin-left:140px"><strong>CHANCE</strong> to get incubation program from RII with total additional prize <strong>Rp 15.000.000</strong>!</p>
-							</div><br>
-							<div class="container-vertical-benefits col-12">
-								<p class="vertical-center" style="margin-right:100px"><strong>FREE</strong> access to MakeAI courses for top 10 finalists</p>
-								<div class="mr-3" style="text-align: right">
-									<img src="<?php echo base_url('assets/resources/hackathon/icon-benefit-2.png') ?>"" style=" height: 80px">
-								</div>
-							</div><br>
-							<div class="container-vertical-benefits col-12">
-								<div class="mr-3" style="text-align: left">
-									<img src="<?php echo base_url('assets/resources/hackathon/icon-benefit-4.png') ?>"" style=" height: 80px">
-								</div>
-								<p class="vertical-center" style="margin-left:140px"><strong>MAKING</strong> new connections with other participants, mentors, and judges</p>
-							</div><br>
-							<!-- 
-						<div class="container-vertical-benefits col-12">
-							<div class="mr-3" style="text-align: right">
-								...and MANY MORE!
-						  	</div>
-						</div> -->
-						</div>
-					</div>
-					<div class="col-md-6 ftco-animate bg-blue-acara fadeInUp ftco-animated" style="background-color: #725b71; padding-bottom: 100px; margin-top: -35px;">
-						<h2 style="border-bottom: 5px solid white; margin-bottom: 20px"><a href="#" style="font-weight:bold">Prize Pool</a></h2>
-						<div class="col-md-12 col-xs-12 div-seminar">
-							<div class="col-md-4 col-xs-12 div-seminar">
-								<ul class="list-unstyled center-text">
-									<li class="li-footer ftco-animate fadeInUp ftco-animated">
-										<div class="juaraCircle">
-											<img src="<?php echo base_url('assets/resources/hackathon/icon-juara-1.png') ?>"" style=" width: 60px">
-										</div>
-										<div style="font-size: 12px; background-color: #f17caa ; border-radius: 30px; padding: 8px; margin: 10px">
-											<strong>Rp 6.000.000,00</strong>
-										</div>
-									</li>
-								</ul>
-							</div>
-							<div class="col-md-4 col-xs-12 div-seminar">
-								<ul class="list-unstyled center-text">
-									<li class="li-footer ftco-animate fadeInUp ftco-animated">
-										<div class="juaraCircle">
-											<img src="<?php echo base_url('assets/resources/hackathon/icon-juara-2.png') ?>"" style=" width: 60px">
-										</div>
-										<div style="font-size: 12px; background-color: #f17caa ; border-radius: 30px; padding: 8px; margin: 10px">
-											<strong>Rp 4.000.000,00</strong>
-										</div>
-									</li>
-								</ul>
-							</div>
-							<div class="col-md-4 col-xs-12 div-seminar">
-								<ul class="list-unstyled center-text">
-									<li class="li-footer ftco-animate fadeInUp ftco-animated center-text">
-										<div class="juaraCircle">
-											<img src="<?php echo base_url('assets/resources/hackathon/icon-juara-3.png') ?>"" style=" width: 60px">
-										</div>
-										<div style="font-size: 12px; background-color: #f17caa ; border-radius: 30px; padding: 8px; margin: 10px">
-											<strong>Rp 2.000.000,00</strong>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</div>
-
-
-						<!--         <div class="col-md-12 col-xs-12 div-seminar">
-	                    <div class="div-seminar p-lg-plus-100 p-tg-min-20 m-lx-per-40" >
-	                    	<div class="col-md-12 div-seminar center-text juaraCircle" style=" height: 60px !important;  width: 60px !important">
-			                    <img  src="<?php echo base_url('assets/resources/hackathon/icon-renom.png') ?>"" style="height: 35px">
-		                    </div>
-	                    </div>
-	                    <div class="col-md-1 div-seminar center-text">
-	                    	<p style="font-size: 30px">X</p>
-	                    </div>
-	                    <div class="col-md-7 div-seminar button-renom">
-	                    	<p style="margin-bottom: 0px !important;"><a href="#" class="btn btn-primary px-4 py-2" style="font-size: 16px"><strong>+ Rp X.XXX.XXX </strong></a></p>
-	                    	<p style="font-size: 9px">*jika menggunakan framework ReNom</p>
-	                    </div>
-                    </div> -->
-
-
-
-						<h2 style="border-bottom: 5px solid white; margin-bottom: 20px; text-align: right;"><a href="#" style="font-weight:bold">Facilities</a></h2>
-						<div class="col-md-12 col-xs-12 div-seminar">
-							<div class="col-md-2 col-xs-12 div-seminar" style="text-align: right">
-								<img src="<?php echo base_url('assets/resources/hackathon/icon-facility-1.png') ?>"" style=" height: 50px; margin: 10px">
-							</div>
-							<div class="col-md-5 col-xs-12 div-seminar" style="text-align: right">
-								<img src="<?php echo base_url('assets/resources/hackathon/icon-facility-2.png') ?>"" style=" height: 50px; margin: 10px">
-							</div>
-							<div class="col-md-5 col-xs-12 div-seminar" style="text-align: right">
-								<img src="<?php echo base_url('assets/resources/hackathon/icon-facility-3.png') ?>"" style=" height: 50px; margin: 10px">
-							</div>
-						</div>
-					</div>
+						</li>
+						
+					</ul>
 				</div>
 			</div>
 
+			<div class="row d-flex">
+			<div class="col-md-12 pl-md-5 ftco-animate" style="padding: 20px;">
+					<h2><a href="#" style="font-weight:bold">General Guidelines</a></h2>
+					<hr style="margin:0px;width:55%;border-color:#ffffff;background-color:#ffffff">
+					<br>
+
+					<p class="color-2" style="background-color:#301b40; border-radius:40px; color:white;padding:20px">
+						Peserta merupakan Mahasiswa Aktif Perguruan tinggi se-indonesia
+					</p>
+					
+					
+					<p class="color-2" style="background-color:#301b40; border-radius:40px; color:white;">
+						
+						Setiap tim diwajibkan untuk mengumpulkan proposal ide aplikasi untuk diseleksi
+					</p>
+					
+					
+					<p class="color-2" style="background-color:#301b40; border-radius:40px; color:white;">
+						
+						Biaya pendaftaran setiap tim adalah Rp 150.001
+					</p>
+					
+					<p class="color-2" style="background-color:#301b40; border-radius:40px; color:white;">
+						
+						Batas terakhir Pendaftaran 15 Agustus 2020
+					</p>
+					<p class="color-2" style="background-color:#301b40; border-radius:40px; color:white;">
+						
+						Setiap tim diwajibkan untuk mengumpulkan proposal ide aplikasi untuk diseleksi.
+					</p>
+					<p class="color-2" style="background-color:#301b40; border-radius:40px; color:white;">
+						
+						Tim yang lolos tahap seleksi diwajibkan untuk mempelajari dan menggunakan <strong>framework AI</strong> Renom pada prototipe yang dibuat. <strong>(www.renom.jp)</strong>
+					</p>
+					<p class="color-2" style="background-color:#301b40; border-radius:40px; color:white;">
+						
+						Pembayaran biaya registrasi dapat ditransfer ke rek. <strong>BCA 8883499384 a/n Ucup Surucup</strong>. serta mengupload foto bukti transfer pada halaman profil grup.
+					</p>
+					
+					
+					
+					
+
+				</div>
+			</div>
+			
+
+			<div class="col-md-12 pl-md-5 ftco-animate" id="accordion">
+			<h2 style=" text-align:center; width:100%;padding-top:30px;"><a href="#" style="font-weight:bold; border-bottom: solid 4px white ;">Frequently Asked Questions (FAQ)</a></h2>
+
+ 				 <!-- <div class="card">
+					<div class="card-header" id="headingOne">
+						<h5 class="mb-0">
+							<button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+							Collapsible Group Item #1
+							</button>
+						</h5>
+						</div>
+
+						<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+						<div class="card-body">
+							Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+						</div>
+						</div>
+					</div>
+				</div> -->
+				<div class="card" style="background-color:#301b40" >
+					<div class="card-header" id="heading-1">
+						<h5 class="mb-0" >
+							<a data-toggle="collapse" href="#collapse-1" aria-expanded="true" aria-controls="collapse-example">
+								<i class="fa fa-chevron-down pull-right"></i>
+								Apa itu Hackathon 
+							</a>
+						</h5>
+					</div>
+					<div id="collapse-1" class="collapse show" style="background-color:#64427e"  aria-labelledby="heading-example">
+						<div class="card-block">
+							... content
+						</div>
+					</div>
+				</div>
+				<div class="card" style="background-color:#301b40" >
+					<div class="card-header" id="heading-2">
+						<h5 class="mb-0" >
+							<a data-toggle="collapse" href="#collapse-2" aria-expanded="true" aria-controls="collapse-example">
+								<i class="fa fa-chevron-down pull-right"></i>
+								Apakah Peserta diwajibkan untuk menginap saat hackathon ?
+							</a>
+						</h5>
+					</div>
+					<div id="collapse-2" class="collapse show" style="background-color:#64427e"  aria-labelledby="heading-example">
+						<div class="card-block">
+							... content
+						</div>
+					</div>
+				</div>
+				<div class="card" style="background-color:#301b40" >
+					<div class="card-header" id="heading-3">
+						<h5 class="mb-0" >
+							<a data-toggle="collapse" href="#collapse-3" aria-expanded="true" aria-controls="collapse-example">
+								<i class="fa fa-chevron-down pull-right"></i>
+								... title
+							</a>
+						</h5>
+					</div>
+					<div id="collapse-3" class="collapse show" style="background-color:#64427e"  aria-labelledby="heading-example">
+						<div class="card-block">
+							... content
+						</div>
+					</div>
+				</div>
+			
+			
+			</div>
+
+			
+		</div>
 	</section>
 
 

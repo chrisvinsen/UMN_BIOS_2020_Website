@@ -10403,5 +10403,16 @@ body{
 }
 
 .color-2{
-  color:#301b40;
+  color: white;
+  background-color:#301b40a9; 
+  border-radius:30px; 
+  color:white;
+  padding:20px;
+  transition: .2s ease;
+}
+
+@media screen and (max-width: 750px){
+  .shadow_img{
+    display: none;
+  }
 }

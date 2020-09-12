@@ -11,7 +11,7 @@ class Admin extends CI_Controller
 
 	public function index()
 	{
-		if (isset($_SESSION['mantapBiosAdmin']) && $_SESSION['mantapBiosAdmin'] == "ed7ede39aec516550fa6e63d1b7c1d1b") {
+		if (isset($_SESSION['mantapBiosAdmin']) && $_SESSION['mantapBiosAdmin'] == "997a8ec108acea9fe390942ad76d6c55") {
 			$data['group'] = $this->HackathonModel->select_all();
 			$data['script'] = $this->load->view('include/Script', NULL, TRUE);
 			$data['loader'] = $this->load->view('include/Loader', NULL, TRUE);
@@ -24,7 +24,7 @@ class Admin extends CI_Controller
 
 	public function uploadView()
 	{
-		if (isset($_SESSION['mantapBiosAdmin']) && $_SESSION['mantapBiosAdmin'] == md5("549e67bd1178e4d0ecaf9a0d6d2a4148" . "2019")) {
+		if (isset($_SESSION['mantapBiosAdmin']) && $_SESSION['mantapBiosAdmin'] == "997a8ec108acea9fe390942ad76d6c55") {
 			$data2['id'] = 'bios19';
 			$data['upload'] = $this->HackathonModel->select_data($data2, 'upload');
 			$this->load->view('page/Upload.php', $data);
@@ -333,6 +333,8 @@ class Admin extends CI_Controller
 					$_FILES['file']['tmp_name'] = $_FILES['fileCard']['tmp_name'][$i];
 					$_FILES['file']['error']     = $_FILES['fileCard']['error'][$i];
 					$_FILES['file']['size']     = $_FILES['fileCard']['size'][$i];
+
+					
 
 					if ($_FILES['file']['name'] != "") {
 						$persondetail[$i]['fileCard'] =  $_FILES['file']['name'];
