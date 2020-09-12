@@ -203,8 +203,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     function deleteGroup(gname, groupId){
         $('#ftco-loader').addClass("show");
-        if (confirm('Are you sure you want to send email?')) {
-            // alert(email+" "+groupId);
+        if (confirm('Are you sure you want to delete this group?')) {
             $.ajax({
                 type: "POST",
                 dataType: "JSON",
@@ -234,7 +233,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     function sendEmail(email, groupId, statusEmail){
         if (confirm('Are you sure you want to send email?')) {
             $('#ftco-loader').addClass("show");
-            // alert(email+" "+groupId);
             $.ajax({
                 type: "POST",
                 dataType: "JSON",
